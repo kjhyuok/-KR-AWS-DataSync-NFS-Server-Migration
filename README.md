@@ -3,4 +3,4 @@
 기존 AWS의 Workshop인 [**AWS DataSync: NFS Server Migration**]([https://catalog.us-east-1.prod.workshops.aws/workshops/976050cc-0606-4b23-b49f-ca7b8ac4b153/en-US/](https://catalog.workshops.aws/datasync-nfs-server-migration-with-storage-gateway/en-US))을 한글화 하고, 실습자에게 필요한 부분만 구성합니다.<br>
 본 Workshop은 약 1~1.5시간 정도 소요되며, 활용되는 AWS Resource 목록은 다음과 같습니다.
 
-* ![AWS Datasync](), [Amazon S3](https://aws.amazon.com/ko/s3/), [AWS Filegateway](https://aws.amazon.com/ko/storagegateway/file/) 그리고 코드기반으로 실습환경을 자동으로 프로비저닝해 줄 [AWS Formation](https://aws.amazon.com/ko/cloudformation/)이 활용됩니다.
+* ![AWS Datasync](https://aws.amazon.com/ko/datasync/), [Amazon S3](https://aws.amazon.com/ko/s3/), [AWS Filegateway](https://aws.amazon.com/ko/storagegateway/file/) 그리고 코드기반으로 실습환경을 자동으로 프로비저닝해 줄 [AWS Formation](https://aws.amazon.com/ko/cloudformation/)이 활용됩니다.
