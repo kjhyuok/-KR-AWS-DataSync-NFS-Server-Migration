@@ -1,5 +1,6 @@
 # AWS datasync로 NFS 서버를 AWS S3로 마이그레이션 해보자!
 
+AWS Builders Online 스토리지 학습에 오신 여러분을 환영합니다.😃<br>
 스토리지 시스템과 서비스 간의 데이터 이동을 단순화, 자동화 및 가속화하는 온라인 데이터 전송 서비스인 AWS datasync를 사용해 온프레미스에 위치한 NFS 서버를 AWS S3로 마이그레이션 하고, 온프레미스에 있는 Application 서버가 사용하던 NFS를 AWS File Gateway를 통해 S3로 대체해 보는 실습입니다.<br>
 기존 AWS의 Workshop인 [**AWS DataSync: NFS Server Migration**]([https://catalog.us-east-1.prod.workshops.aws/workshops/976050cc-0606-4b23-b49f-ca7b8ac4b153/en-US/](https://catalog.workshops.aws/datasync-nfs-server-migration-with-storage-gateway/en-US))을 한글화 하고, 실습자에게 필요한 부분만 구성합니다.<br>
 본 Workshop은 약 1~1.5시간 정도 소요되며, 활용되는 AWS Resource 목록은 다음과 같습니다.
@@ -36,4 +37,4 @@
 * [Module3](./detail/module3.md) - Storage Gateway를 사용하여 온프레미스에서 S3 버킷에 액세스
 * [Module4](./detail/module4.md) - 컷오버 전 마지막 증분 복제본
 * [Module5](./detail/module5.md) - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리<br><br>
-자~ 이제 워크샵 시작을 위해 [Module1](./detail/module1.md)로 이동해 볼까요?
+자~ 이제 워크샵 시작을 위해 [Module1](./detail/module1.md)으로 이동해 볼까요?
