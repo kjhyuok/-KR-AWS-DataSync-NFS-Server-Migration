@@ -36,4 +36,5 @@
 * 모듈 3 - Storage Gateway를 사용하여 온프레미스에서 S3 버킷에 액세스
 * 모듈 4 - 컷오버 전 마지막 증분 복제본
 * 모듈 5 - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리<br>
-시작하려면 모듈 1로 이동하십시오.
+시작하려면 모듈 1[module1](./detail/module1.md)
+로 이동하십시오.
