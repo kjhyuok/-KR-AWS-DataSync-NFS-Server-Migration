@@ -23,6 +23,17 @@
 ### 전제조건<br>
 #### AWS Account<br>
 이 워크샵을 완료하려면 선택한 AWS 영역에서 AWS IAM 역할, EC2 인스턴스, AWS DataSync, AWS Storage Gateway 및 Cloud Formation 스택을 생성할 수 있는 권한을 가진 AWS 계정이 필요합니다.
-
 #### Software<br>
 인터넷 브라우저 - 이 워크샵에서는 최신 버전의 Chrome 또는 Firefox를 사용하는 것이 좋습니다.<br>
+*****
+### 비용<br>
+이 Workshop을 따라서 실습하는 데 약 3.00 USD의 비용이 듭니다. Workshop을을 완료한 후 정리 지침에 따라 배포된 모든 리소스를 제거하고 AWS 계정에 대한 지속적인 비용을 제한하는 것이 좋습니다.<br>
+*****
+### Workshop 모듈 및 소개<br>
+이 워크샵은 다음 5개의 모듈로 구성됩니다.<br>
+* 모듈 1 - 온프레미스 및 클라우드 내 region에 리소스 배포
+* 모듈 2 - DataSync를 사용하여 S3에 초기 파일 복사
+* 모듈 3 - Storage Gateway를 사용하여 온프레미스에서 S3 버킷에 액세스
+* 모듈 4 - 컷오버 전 마지막 증분 복제본
+* 모듈 5 - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리<br>
+시작하려면 모듈 1로 이동하십시오.
