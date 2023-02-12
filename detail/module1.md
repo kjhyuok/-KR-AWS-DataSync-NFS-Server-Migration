@@ -1,10 +1,10 @@
-# Data Engineering Immersion Day에 대한 전체 Architecture 소개
+# Module 1 : 온프레미스 및 클라우드 내 지역에 리소스 배포
 
-이 단계에서는 오늘 여러분이 구성할 *Architecture* 와, 각 실습의 단계별로 진행되는 *Architecture Patterns*을 설명합니다.\
-아래의 각 단계별 수행되는 Task는 다음과 같습니다.
-
-### 1. Initially you will perform Data Ingestion
-![1-1](https://user-images.githubusercontent.com/105655711/191056210-1aaaf022-cc6f-4700-959f-eecc34588003.png)
+Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리전에 리소스를 배포합니다.<br>
+하나는 온프레미스 환경을 나타내고 다른 하나는 클라우드 내 환경을 나타내는데, 우선 모든 리소스가 배포되면 애플리케이션 서버의 NFS 서버에서 내보내기를 마운트하고 기존 파일을 확인합니다.
+이 모듈에서는 CloudFormation 스크립트를 사용하여 2개의 AWS 리전에서 리소스를 배포합니다: 온프레미스 환경을 나타내는 하나와 클라우드 내 환경을 나타내는 하나입니다. 
+모든 리소스가 배포된 후, NFS 서버에서 Application 서버로 NFS 내보내기를 마운트하고 기존 파일을 확인합니다.
+[1-1](./images/1-1.png)
 
 ### 2. Perform Data Transformations
 ![1-2](https://user-images.githubusercontent.com/105655711/191056398-6f3585e1-325b-4ed6-a0ca-627142083d29.png)
