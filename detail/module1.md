@@ -36,6 +36,32 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
     3. Next을 다시 클릭(옵션 및 고급 옵션 섹션 건너뛰기)
     4. review 페이지에서 아래로 스크롤하여 CloudFormation이 IAM 리소스를 생성함을 확인하는 확인란을 선택한 다음 스택 생성을 클릭합니다.
 
-참고: 다음 단계를 진행하기 전에 각 리전의 CloudFormation 스택이 CREATE_COMPLETE 상태에 도달할 때까지 기다리십시오. 우리가 지금 실행 한 위의 2개 CloudFormation 스택이 완료되는 데 약 10분이 소요됩니다.<br>
+참고: 다음 단계를 진행하기 전에 각 리전의 CloudFormation 스택이 CREATE_COMPLETE 상태에 도달할 때까지 기다리십시오. 우리가 지금 실행 한 위의 2개 CloudFormation 스택이 완료되는 데 약 10분이 소요됩니다.<br><br>
 
+3. Stack Outputs<br>
+완료되면 각 Cloud Formation 스택에 "Outputs" 목록이 표시됩니다. IP 주소 및 리소스 이름과 같은 values는 워크샵 전체에서 사용됩니다. 그래서 가급적 이러한 values를 다른 곳에 복사하거나 브라우저에서 페이지를 열어 두고 워크샵을 진행하면서 복사해서 사용 할 수 있습니다.<br>
+온프레미스 영역의 클라우드 형성 페이지에서 아래 이미지와 같이 출력 탭을 클릭합니다.<br>
+다음과 같은 4가지 값이 표시됩니다:<br>
+* **appServerPrivateIP** – Application 서버의 private IP 주소입니다. NFS 내보내기에 대한 액세스를 제한하기 위해 Storage Gateway file 공유를 생성할 때 이 옵션을 사용합니다.
+* **dataSyncAgentPublicIP** – DataSync agent를 실행하는 EC2 인스턴스의 public IP 주소입니다. DataSync agent를 활성화할 때 사용합니다.
+* **fileGatewayPublicIP** – File Gateway를 실행하는 EC2 인스턴스의 public IP 주소입니다. 이 옵션은 Storage Gateway를 활성화할 때 사용합니다.
+* **nfsServerPrivateIP** – NFS 서버의 private IP 주소입니다. Application 서버와 DataSync 위치를 생성할 때 모두 사용합니다.
 
+![1-2](../images/1-2.png)
+클라우드 내 지역의 CloudFormation 페이지에서 아래 이미지와 같이 Outputs 탭을 클릭하고 아래 그림과 같이 bucket관련 나열된 두 값(name/role)이 표시되어야 합니다.<br>
+* **bucketName** – 데이터가 복사될 S3 버킷의 이름입니다. Storage Gateway에서 파일 공유를 생성할 때 이것을 사용합니다.
+* **bucketRoleForDataSync** – DataSync 에이전트가 S3 버킷에 파일을 쓰기 위해 사용하는 역할입니다. DataSync에 대한 S3 위치를 생성할 때 이것을 사용합니다.
+
+![1-3](../images/1-3.png)
+
+4. Application server에 연결하기<br>
+    1. 온프레미스 지역의 AWS 콘솔에서 서비스를 클릭하고 **EC2**를 선택하고,
+    2. 왼쪽 메뉴에서 **Instance**를 선택합니다.
+    3. Application Server 인스턴스를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 **Connect**을 선택합니다.
+온프레미스 CloudFormation 템플릿을 배포할 때 EC2 Key Pair을 구성한 경우 컴퓨터에서 SSH 클라이언트를 사용하여 연결할 수 있습니다.<br>
+![1-4](../images/1-4.png)
+
+그렇지 않으면 EC2 Instance Connect 또는 Session Manager를 사용하여 브라우저를 통해 직접 인스턴스에 연결할 수 있습니다.
+![1-5](../images/1-5.png)
+
+EC2 Instance Connect 또는 Session Manager를 사용하는 경우 연결을 **Connect**합니다. 응용 프로그램 서버에 대한 명령줄 인터페이스(CLI)와 함께 브라우저에서 새 탭이 열립니다. 실습과정에서 이 탭을 사용하여 CLI기반으로 작업해야 하니 열어 두세요. 
