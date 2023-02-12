@@ -22,4 +22,4 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
     6. review 페이지에서 아래로 스크롤하여 CloudFormation이 IAM 리소스를 생성함을 확인하는 확인란을 선택한 다음 스택 생성을 클릭합니다.
    
 참고: 이 CloudFormation 템플릿의 일부로 시작된 인스턴스는 몇 분 동안 초기화 중 상태일 수 있습니다.<br>
-온프레미스 지역에서 CloudFormation 배포가 진행되는 동안 클라우드 내 지역에 대한 리소스 배포를 진행할 수 있습니다.<br>
+자~ 이제 온프레미스 지역에서 이 CloudFormation 배포가 진행되는 동안 클라우드 내 지역에 대한 리소스를 또 다른 CloudFormation으로 동시에 배포를 진행해 보시죠.<br>
