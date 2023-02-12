@@ -64,4 +64,24 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
 그렇지 않으면 EC2 Instance Connect 또는 Session Manager를 사용하여 브라우저를 통해 직접 인스턴스에 연결할 수 있습니다.
 ![1-5](../images/1-5.png)
 
-EC2 Instance Connect 또는 Session Manager를 사용하는 경우 연결을 **Connect**합니다. 응용 프로그램 서버에 대한 명령줄 인터페이스(CLI)와 함께 브라우저에서 새 탭이 열립니다. 실습과정에서 이 탭을 사용하여 CLI기반으로 작업해야 하니 열어 두세요. 
+EC2 Instance Connect 또는 Session Manager를 사용하는 경우 연결을 **Connect**합니다. 응용 프로그램 서버에 대한 명령줄 인터페이스(CLI)와 함께 브라우저에서 새 탭이 열립니다. 실습과정에서 이 탭을 사용하여 CLI기반으로 작업해야 하니 열어 두세요.<br>
+
+### Validation Step
+***
+Application 서버용 CLI에서 다음 명령을 실행하여 NFS export를 마운트하고 NFS 서버에서 파일을 확인하세요.<br>
+앞서 실행했었던 온프레미스 CloudFormation 스택 **Outputs**의 nfsServerPrivateIP 값을 사용합니다.<br>
+
+```
+$ sudo mount -t nfs <nfs-server-ip-address>:/media/data /mnt/data
+$ ls /mnt/data/images
+ ```
+/mnt/data/images 폴더에서 아래와 같이 200개의 이미지 파일을 볼 수 있는데 이런 이미지 파일은 AWS 클라우드 내 지역의 S3 버킷으로 마이그레이션될 현재 온프레미스의 NFS 서버내 데이터를 나타냅니다.<br>
+![1-6](../images/1-6.png)
+
+### Module1 Summary
+***
+Module1 에서는 온프레미스 지역과 클라우드 내 지역 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다.<br>
+또한 Application 서버에 NFS export를 마운트하고 약 200여개의 jpg 데이터 세트를 확인했습니다.<br><br>
+다음 모듈에서는 NFS 서버에서 S3 버킷으로 초기 파일 복사를 수행하는 DataSync 작업을 생성해 보겠습니다.
+
+이제 Module2로 이동해 볼까요?
