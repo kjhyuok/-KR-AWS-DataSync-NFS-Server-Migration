@@ -7,7 +7,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
 
 ### Module Steps
 ***
-1. 온프레미스 지역에 대한 AWS 리소스 배포<br>
+1. 온프레미스 지역에 대한 AWS 리소스 배포(*저희는 실습을 모두 us-east-1: US East(N. Virginia)에서 진행합니다. <br>
    a. CloudFormation을 사용하여 온프레미스 리소스를 배포하려면 아래 표의 실행 링크 중 하나를 클릭하십시오. 배포 중 오류를 방지하려면 이전에 AWS 리소스를 생성한 지역을 선택하십시오.<br>
    
 |Region Code|Region Name|Launch|
