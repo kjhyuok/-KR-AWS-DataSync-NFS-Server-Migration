@@ -34,7 +34,8 @@ AWS Builders Online 스토리지 학습에 오신 여러분을 환영합니다.�
 이 워크샵은 다음 5개의 모듈로 구성됩니다.<br>
 * [Module1](./detail/module1.md) - 온프레미스 및 클라우드 내 region에 리소스 배포
 * [Module2](./detail/module2.md) - DataSync를 사용하여 S3에 초기 파일 복사
-* [Module3](./detail/module3.md) - Storage Gateway를 사용하여 온프레미스에서 S3 버킷에 액세스
+* [Module3](./detail/module3.md) - Storage Gateway를 사용한 온프레미스 &rarr; AWS S3로의 액세스
+
 * [Module4](./detail/module4.md) - 컷오버 전 마지막 증분 복제본
 * [Module5](./detail/module5.md) - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리<br><br>
 자~ 이제 워크샵 시작을 위해 [Module1](./detail/module1.md)으로 이동해 볼까요?
