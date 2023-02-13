@@ -46,7 +46,7 @@ ls /mnt/fgw
 애플리케이션 서버용 CLI로 돌아가서 "ls /mnt/fgw" 명령을 반복합니다. 이제 새 파일이 표시됩니다.<br>
 ![4-7](../images/4-7.png)
 
-### Module1 Summary
+### Module4 Summary
 ***
 이 모듈에서는 컷오버 전에 새 파일을 NFS 서버에 추가했습니다. 그런 다음 DataSync 작업을 두 번째로 실행하여 파일 변경 사항을 선택하고 S3에 복사했습니다. 마지막으로 캐시 새로 고침 방법을 사용하여 S3에서 새 파일을 볼 수 있도록 Storage Gateway의 메타데이터를 업데이트했습니다.<br>
 
