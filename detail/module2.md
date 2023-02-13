@@ -70,7 +70,7 @@ Agent Instance는 Module1에서 생성되었지만 사용하려면 클라우드 
 IN-CLOUD 지역 관리 콘솔에서 서비스를 선택한 다음 **S3**를 선택합니다. 버킷 목록에서 **data-migration-workshop** 버킷을 클릭합니다. 그 안에는 "*images*"라는 최상위 폴더가 표시되는데 이 폴더 안에는 NFS 서버의 .jpg 파일 200개가 있어야 합니다.
 ![2-13](../images/2-13.png)
 
-### Module1 Summary
+### Module2 Summary
 ***
 이 모듈에서는 DataSync agent를 성공적으로 활성화하고 온프레미스 NFS 서버에서 AWS의 S3 버킷으로 파일을 복사하는 작업을 생성하고 그 파일이 성공적으로 복사되었는지 확인했습니다.<br>
 다음 [Module3](../detail/module3.md)에서는 온프레미스 파일 게이트웨이를 생성해 보고 S3 버킷에 연결하여 NFS를 통해 AWS 클라우드 내의 파일에 액세스할 수 있도록 구성할 것입니다.<br>
