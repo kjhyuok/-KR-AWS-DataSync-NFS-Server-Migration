@@ -1,71 +1,56 @@
-# Module 3 : Storage Gateway를 사용한 온프레미스 &rarr; AWS S3로의 액세스
+# Module 4 : 컷오버 전 마지막 증분 복제
 
-이제 NFS 서버에서의 파일이 S3 버킷으로 복사되었습니다. 이 모듈에서는 CloudFormation에 의해 배포된 File Gateway를 구성하여 온프레미스 지역에서 S3 버킷과 연결하고 [**Storage Gateway**](https://aws.amazon.com/ko/storagegateway/) NFS share를 통해 S3 버킷의 파일에 접근할 수 있도록 액세스를 제공할 예정 입니다.<br>
-Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 대한 액세스를 확인해 봅시다.
+이 모듈에서는 DataSync를 사용하여 증분 데이터 전송을 수행합니다.<br>
+이렇게하면 초기 데이터 복사 후 생성된 새 파일을 가져올 수 있고, 온프레미스 NFS 서버에서의 모든 파일이 복사 되었음이 확인되면 컷오버를 진행할 수 있습니다.<br>
 
-![3-1](../images/3-1.png)
+![4-1](../images/4-1.png)
 
 ### Module Steps (👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*)
 ***
-1. **Activate the Storage Gateway**<br>
-바로 전 Module2에서 DataSync agent를 활성화한 것처럼 Storage Gateway에 대해 비슷한 단계를 수행하여 CLOUD 지역에서 활성화해야 합니다. 아래 단계를 따라서 진행합니다.<br>
+1. **Create a new file on the NFS server**<br>
+애플리케이션 서버용 CLI에서 다음 명령을 실행하여 NFS 서버에 새 파일을 생성합니다.<br>
+```
+sudo cp /mnt/data/images/00001.jpg /mnt/data/new-image.jpg
+```
 
-    1. CLOUD 지역의 AWS Management 콘솔 페이지로 이동하고 서비스를 클릭한 다음 **Storage Gateway**를 선택합니다.
-    2. 게이트웨이가 없으면 **Get started** 버튼을 클릭하고 그렇지 않으면 **Create gateway** 버튼을 클릭합니다.
-    3. 게이트웨이 이름을 "*DataMigrationGateway*"로 지정하고 **Amazon S3 File Gateway** 유형을 선택합니다.
-    4. 호스트 플랫폼으로 **Amazon EC2**를 선택하고 게이트웨이 설정 확인을 선택한 후 **Next**를 클릭합니다.
-    5. **Publicly accessible** endpoint 유형을 선택합니다.
-    6. 앞서 Module1과정에서 CloudFormation을 사용해서 생성된 파일 게이트웨이 인스턴스의 **Public IP address**를 입력하고, **Next**를 클릭합니다.
-    7. 게이트웨이 setting을 검토하고 **Next**를 클릭합니다.
-    8. 게이트웨이가 활성화된 다음 로컬 디스크 장치를 준비하는 데 1분 정도 소요됩니다. **300GiB /dev/sdc** 장치를 **Cache**에 할당합니다. 자주 액세스하는 파일을 캐시하는 데 사용할 게이트웨이의 로컬 디스크입니다.
-    9. **CloudWatch log group** 패널에서 *Deactivate logging*를 선택하고 **Configure**을 클릭합니다.
-    10. 기본 Storage Gateway 페이지에 *DataMigrationGateway* 게이트웨이가 표시됩니다.
-    ![3-2](../images/3-2.png)
+2. **Copy the new file to the S3 bucket**<br>
+NFS 서버에서 S3 버킷으로 파일을 복사하는 DataSync 작업을 이미 생성했습니다. 새 파일을 복사하려면 작업을 다시 실행하면 됩니다. DataSync는 소스와 대상 간에 변경된 파일만 복사합니다.<br>
 
-2. **Create a Storage Gateway NFS share**<br>
-
-    1. **Create file share** 버튼을 클릭합니다.
-    2. 방금 생성된 게이트웨이를 선택합니다.
-    3. **Amazon S3 bucket name**에 DataSync가 파일을 복사한 S3 버킷의 이름을 입력합니다. 버킷 이름은 **CLOUD**영역의 CloudFormation 스택 *Outputs*에서 확인할 수 있습니다. **S3 prefix name**은 비워 둡니다.
-    4. *Access objects using* 설정에서 **NFS**가 선택되어 있는지 확인합니다. **Automated cache refresh from S3**을 없음으로 설정합니다.
-    5. Click **Next**.
-    6. default S3 스토리지 설정을 유지한 후 **Next**를 클릭합니다.
-    7. **Access object** 섹션에서 **Add client**를 클릭하고, Application 서버의 **Private IP Address**를 추가한 후 "/32"를 추가합니다. 이렇게 하면 Application 서버만 게이트웨이의 NFS 파일 공유에 액세스할 수 있습니다.
-    ![3-3](../images/3-3.png)
-    8. **Mount options** 섹션에서 **Squash level**을 "*No root squash*"으로 변경합니다.
-    9. Click **Next**.
-    10. file share 설정을 검토하고 **Create**를 클릭합니다.
-    11. new file share를 선택하고 mount 지침을 확인합니다.
-    ![3-4](../images/3-4.png)
-
-3. Application 서버에 NFS share Mount<br>
-    1. Application 서버에 대한 CLI로 돌아가서 아래 명령을 실행하여 Storage Gateway 공유에 대한 새 Mount 지점을 생성합니다.
-    ```
-    sudo mkdir /mnt/fgw
-    ```
-    2. Storage Gateway 파일 공유 페이지에서 Linux 탑재 명령을 복사하고 "[MountPath]"를 "/mnt/fgw"로 바꿉니다. **sudo로 명령을 실행해야 합니다.**
-    3. 이제 애플리케이션 서버에 두 개의 NFS 마운트 지점이 있어야 합니다. 하나는 온프레미스 NFS 서버용(/mnt/data에 mounted)과 Storage Gateway용(/mnt/fgw에 mounted)입니다.
-    ```
-    mount | grep nfs4
-    ```
-    ![3-5](../images/3-5.png)
+    1. 클라우드 내 리전 AWS 관리 콘솔로 돌아가서 **DataSync** 서비스로 이동합니다.
+    2. 이전에 생성한 작업을 선택하고 **Start** 버튼과 **Start with defaults**을 클릭합니다.
+    3. 기록 탭으로 이동하고 목록에서 최신 작업 실행을 선택합니다.
+    ![4-2](../images/4-2.png)
+작업을 완료하는 데 몇 분 정도 걸리는데 작업이 완료되면 stats을 살펴보십시오. 지난번과 똑같은 작업을 실행했지만 2개의 파일만 복사되었습니다(새 파일 및 새 파일이 포함된 폴더의 변경 사항).<br>
+![4-3](../images/4-3.png)
+![4-4](../images/4-4.png)
+S3 버킷을 살펴보면 예상대로 새 파일이 있음을 알 수 있습니다.<br>
+![4-5](../images/4-5.png)
 
 ### Validation Step
 ***
-다음 명령을 실행하여 2 NFS shares에 동일한 파일 집합이 있는지 확인합니다.<br>
+S3 버킷에 새 파일이 있으면 Application 서버의 Storage Gateway share를 통해 볼 수 있어야 합니다. 한 번 확인해 보시죠!<br>
 ```
-diff -qr /mnt/data /mnt/fgw
+s /mnt/data
+ls /mnt/fgw
 ```
-/mnt/fgw: .aws-datasync-metadata에 하나의 추가 파일만 표시되어야 합니다.<br>
-이 파일은 작업이 실행될 때 S3 버킷의 DataSync에 의해 생성되었는데 다른 모든 파일은 동일하며 데이터가 오류 없이 DataSync에 의해 완전히 전송되었음을 나타냅니다.
+![4-6](../images/4-6.png)
+
+자.. 우리는 DataSync를 사용하여 NFS 서버에서 S3로 파일을 복사했습니다. 그리고 Storage Gateway는 S3 버킷에 연결됩니다. 무슨 일이야? 애플리케이션 서버의 Storage Gateway 공유에서 파일을 볼 수 없는 이유는 무엇입니까?
+
+이 경우 파일은 Storage Gateway 공유 자체를 통하지 않고 DataSync를 통해 S3 버킷에 기록되었습니다. Storage Gateway는 버킷에 새 객체가 있다는 것을 인식하지 못합니다. 애플리케이션 서버에서 새 파일을 보려면 Storage Gateway에서 메타데이터 캐시를 새로 고쳐야 합니다.
+
+클라우드 내 지역 관리 콘솔로 이동하여 Storage Gateway 서비스로 이동합니다. 페이지 왼쪽에서 파일 공유를 클릭하고 목록에서 NFS 공유를 선택합니다. 작업 버튼을 클릭하고 캐시 새로 고침을 선택한 다음 시작을 클릭합니다.
+
+이 경우에는 수백 개의 객체만 있는 버킷이 있으므로 새로 고침이 빠릅니다. 개체가 많은 큰 버킷에서는 캐시 새로 고침에 상당한 시간이 걸릴 수 있습니다. 새로 고침 범위를 줄이려면 API 또는 CLI를 사용하고 새로 고침을 특정 디렉터리로 제한할 수 있습니다. CloudWatch 이벤트를 사용하여 캐시 새로 고침이 완료되는 시기를 모니터링할 수도 있습니다.
+
+애플리케이션 서버용 CLI로 돌아가서 "ls /mnt/fgw" 명령을 반복합니다. 이제 새 파일이 표시됩니다.<br>
+![4-7](../images/4-7.png)
 
 ### Module1 Summary
 ***
-이 모듈에서는 성공적으로 Storage Gateway를 활성화하고 게이트웨이에 NFS 파일 공유를 생성했습니다.<br>
-그런 다음 Application 서버에 공유를 탑재하고 온프레미스 NFS 서버의 파일이 S3 버킷에 올바르게 복사되었는지 확인했습니다.<br><br>
-이 워크숍의 궁극적인 목표는 온프레미스 NFS 서버를 종료하고 스토리지 리소스를 확보하는 것인데, 프로덕션 환경에서 이것은 일반적으로 애플리케이션 서버가 새로운 스토리지로 전환될 때 일시적인 다운타임이 발생하는 "*cutover point*"을 포함하며 이 워크숍에서는 Storage Gateway NFS 공유입니다.<br>
-그러나 일반적으로 마이그레이션이 발생하는 동안 또는 그 직후에 생성되는 새 파일이 있으므로 컷오버 전에 또 다른 증분 파일 복사가 필요합니다.<br><br>
-다음 모듈에서는 Storage Gateway 공유로의 최종 컷오버 전에 증분 복사를 한 번 더 수행합니다.<br>
+이 모듈에서는 컷오버 전에 새 파일을 NFS 서버에 추가했습니다. 그런 다음 DataSync 작업을 두 번째로 실행하여 파일 변경 사항을 선택하고 S3에 복사했습니다. 마지막으로 캐시 새로 고침 방법을 사용하여 S3에서 새 파일을 볼 수 있도록 Storage Gateway의 메타데이터를 업데이트했습니다.<br>
 
-[Module4](../detail/module4.md)로 GoGo!👏
+NFS 서버에서 S3로 모든 데이터가 복사되었으므로 이제 컷오버를 수행할 준비가 되었습니다.<br>
+
+[Module5](../detail/module5.md)로 GoGo!👏
 
