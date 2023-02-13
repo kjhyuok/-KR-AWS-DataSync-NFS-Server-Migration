@@ -59,7 +59,7 @@ diff -qr /mnt/data /mnt/fgw
 /mnt/fgw: .aws-datasync-metadata에 하나의 추가 파일만 표시되어야 합니다.<br>
 이 파일은 작업이 실행될 때 S3 버킷의 DataSync에 의해 생성되었는데 다른 모든 파일은 동일하며 데이터가 오류 없이 DataSync에 의해 완전히 전송되었음을 나타냅니다.
 
-### Module1 Summary
+### Module3 Summary
 ***
 이 모듈에서는 성공적으로 Storage Gateway를 활성화하고 게이트웨이에 NFS 파일 공유를 생성했습니다.<br>
 그런 다음 Application 서버에 공유를 탑재하고 온프레미스 NFS 서버의 파일이 S3 버킷에 올바르게 복사되었는지 확인했습니다.<br><br>
