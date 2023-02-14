@@ -25,14 +25,14 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 #### AWS Account
 이 워크샵을 완료하려면 선택한 AWS 영역에서 AWS IAM Roles, EC2 Instance, AWS DataSync, AWS Storage Gateway 및 CloudFormation 스택을 생성할 수 있는 권한을 가진 AWS Account가 필요합니다.
 #### Software
-인터넷 브라우저 - 이 워크샵에서는 최신 버전의 Chrome 또는 Firefox를 사용하는 것이 좋습니다.<br>
+인터넷 브라우저 - 이 워크샵에서는 최신 버전의 Chrome 또는 Firefox를 사용하는 것이 좋습니다.
 ### 비용
-이 Workshop을 따라서 실습하는 데 약 3.00 USD의 비용이 듭니다. Workshop을을 완료한 후 정리 지침에 따라 배포된 모든 리소스를 제거하고 AWS 계정에 대한 지속적인 비용을 제한하는 것이 좋습니다.<br>
+이 Workshop을 따라서 실습하는 데 약 3.00 USD의 비용이 듭니다. Workshop을을 완료한 후 정리 지침에 따라 배포된 모든 리소스를 제거하고 AWS 계정에 대한 지속적인 비용을 제한하는 것이 좋습니다.
 ### Workshop 모듈 및 소개
-이 워크샵은 다음 5개의 모듈로 구성됩니다.<br>
+이 워크샵은 다음 5개의 모듈로 구성됩니다.
 * [Module1](./detail/module1.md) - On-premises 리전 및 IN-CLOUD 리전 실습용 AWS Resource 배포
 * [Module2](./detail/module2.md) - DataSync를 사용하여 S3에 초기 파일을 복사
 * [Module3](./detail/module3.md) - Storage Gateway를 사용한 On-premises 리전 &rarr; IN-CLOUD 리전내 S3로의 액세스
 * [Module4](./detail/module4.md) - 컷오버 수행 전 마지막 증분 데이터 복제
-* [Module5](./detail/module5.md) - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리<br>
+* [Module5](./detail/module5.md) - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리<br><br>
 자~ 이제 실습 시작을 위해 [Module1](./detail/module1.md)으로 이동해 볼까요?
