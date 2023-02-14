@@ -20,9 +20,8 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     
    ![2-3](../images/2-3.png)
     
-   7. 원하는 경우 agent 이름을 입력한 다음 **Create agent**를 클릭합니다.
+   7. 원하는 경우 agent 이름을 입력한 다음 **Create agent**를 클릭합니다.<br>
 
-<br>
 2. **Create NFS location**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations**를 클릭한 다음 **Create location**을 클릭합니다.
@@ -32,8 +31,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     
     ![2-4](../images/2-4.png)
     
-    5. Click **Create location**.
-<br>
+    5. Click **Create location**.<br>
 
 3. **Create S3 location**
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations** 클릭한 다음 **Create location**을 클릭합니다.
