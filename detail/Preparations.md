@@ -3,10 +3,6 @@
 **콘솔 환경**: AWS Web Console은 본 실습의 화면캡쳐 기준인 **Eng**로 설정합니다. 
 만약 default page가 한글이라면, 다음과 같이 **Eng**으로 설정해 봅니다.
 
-  1. 우측상단의 ID@Account No. 선택
-
-
-
   <img src = "../images/0-1.png" width = "700" height = "380">  
 
 
