@@ -22,7 +22,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     
    7. 원하는 경우 agent 이름을 입력한 다음 **Create agent**를 클릭합니다.
 
-
+<br>
 2. **Create NFS location**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations**를 클릭한 다음 **Create location**을 클릭합니다.
@@ -33,7 +33,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     ![2-4](../images/2-4.png)
     
     5. Click **Create location**.
-
+<br>
 
 3. **Create S3 location**
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations** 클릭한 다음 **Create location**을 클릭합니다.
@@ -48,7 +48,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     7. Click **Create location**: 페이지 왼쪽에서 **Locations**를 다시 클릭합니다. 이제 두 개의 locations가 나열되는데 하나는 NFS 서버용이고 다른 하나는 S3 버킷용입니다.
     
     ![2-6](../images/2-6.png)
-
+<br>
 
 4. **Create a task**
     1. DataSync 서비스 페이지의 왼쪽에서 **Tasks**를 클릭한 다음 **Create task**을 클릭합니다.
@@ -66,9 +66,8 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     
     ![2-8](../images/2-8.png)
     
-    10. 해당 작업 설정을 검토하고 **Create task**을 클릭합니다.
+    10. 해당 작업 설정을 검토하고 **Create task**을 클릭합니다.<br>
    
-
 5. **Run the task**
     1. **Task status**가 "*Available*"으로 보고될 때까지 기다립니다. (페이지를 refresh해야 할 수도 있습니다.)
 
