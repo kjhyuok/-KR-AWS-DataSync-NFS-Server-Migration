@@ -4,7 +4,7 @@
 
 1. 우측상단의 ID@Account No. 선택<br>
 
-<img src = "../images/0-1.png" width = "50%" height = "50%">  
+<img src = "../images/0-1.png" width = "80%" height = "80%">  
 
 3. ㅇㄹ
 
