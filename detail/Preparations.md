@@ -1,6 +1,6 @@
 `이 페이지는 실습에 앞서 AWS Web Console의 설정을 실습 Guide에 맞추기 위함 입니다. 원활한 진행을 위해 꼭 확인 부탁드립니다.`
 
-* 영문으로 콘솔 변경하기<br> 
+* **영문으로 콘솔 변경하기**<br> 
 AWS Web Console을 본 실습의 화면캡쳐 기준인 **Eng**로 설정합니다. 
 만약 default page가 한글이라면, 다음과 같이 **Eng**으로 설정해 봅니다.
 
@@ -29,7 +29,7 @@ AWS Web Console을 본 실습의 화면캡쳐 기준인 **Eng**로 설정합니�
 영문으로 변경된 화면을 확인할 수 있습니다.
 
 ****
-* 실습 region을 us-east-1: US East(N. Virginia) 설정하기<br> 
+* **실습 region을 us-east-1: US East(N. Virginia) 설정하기**<br> 
 본 실습의 region은 **N. Virginia**를 기준으로 제작되어 있습니다. 따라서 현재 진입한 region이 **N. Virginia**가 *아닌분들만 다음과 같이 region 설정을 부탁드립니다.
 
 1. 우측 상단 region 정보 클릭
