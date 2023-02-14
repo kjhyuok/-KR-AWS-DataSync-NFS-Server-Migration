@@ -45,6 +45,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     2. *Source location option*에서 **Choose an existing location**을 선택합니다.
     3. *Existing locations* 드롭다운에서 이전에 생성한 NFS 서버 location를 선택합니다.
     4. Click **Next**.
+
     ![2-7](../images/2-7.png)
     5. *Destination location* 옵션에서 **Choose an existing location**을 선택합니다.
     6. *Existing locations* 드롭다운에서 이전에 생성한 S3 버킷 위치를 선택합니다.
