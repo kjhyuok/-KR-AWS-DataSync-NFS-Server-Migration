@@ -4,7 +4,7 @@
 
   1. 우측상단의 ID@Account No. 선택
 
-  <img src = "../images/0-1.png" width = "700" height = "480">  
+  <img src = "../images/0-1.png" width = "700" height = "380">  
 
 
 `이 페이지는 AWS에서 주최하는 교육에 참석하실 경우의 '실습 시작 전 준비 단계'를 안내합니다.`
