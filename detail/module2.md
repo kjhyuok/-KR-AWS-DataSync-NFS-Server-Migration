@@ -22,6 +22,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     
    7. 원하는 경우 agent 이름을 입력한 다음 **Create agent**를 클릭합니다.
 
+
 2. **Create NFS location**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations**를 클릭한 다음 **Create location**을 클릭합니다.
@@ -32,6 +33,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     ![2-4](../images/2-4.png)
     
     5. Click **Create location**.
+
 
 3. **Create S3 location**
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations** 클릭한 다음 **Create location**을 클릭합니다.
@@ -46,6 +48,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     7. Click **Create location**: 페이지 왼쪽에서 **Locations**를 다시 클릭합니다. 이제 두 개의 locations가 나열되는데 하나는 NFS 서버용이고 다른 하나는 S3 버킷용입니다.
     
     ![2-6](../images/2-6.png)
+
 
 4. **Create a task**
     1. DataSync 서비스 페이지의 왼쪽에서 **Tasks**를 클릭한 다음 **Create task**을 클릭합니다.
@@ -64,6 +67,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     ![2-8](../images/2-8.png)
     
     10. 해당 작업 설정을 검토하고 **Create task**을 클릭합니다.
+   
 
 5. **Run the task**
     1. **Task status**가 "*Available*"으로 보고될 때까지 기다립니다. (페이지를 refresh해야 할 수도 있습니다.)
@@ -89,7 +93,7 @@ IN-CLOUD 지역 관리 콘솔에서 **Services**를 선택한 다음 **S3**를 �
 
 ### Module2 Summary
 이 모듈에서는 DataSync agent를 성공적으로 활성화하고 On-premises NFS 서버에서 AWS의 S3 버킷으로 파일을 복사하는 작업을 생성하고 그 파일이 성공적으로 복사되었는지 확인했습니다.<br>
-다음 [Module3](../detail/module3.md)에서는 On-premises 파일 게이트웨이를 생성해 보고 S3 버킷에 연결하여 NFS를 통해 AWS 클라우드 내의 파일에 액세스할 수 있도록 구성할 것입니다.<br>
+다음 [Module3](../detail/module3.md)에서는 On-premises 파일 게이트웨이를 생성해 보고 S3 버킷에 연결하여 NFS를 통해 AWS 클라우드 내의 파일에 액세스할 수 있도록 구성할 것입니다.
 
 [Module3](../detail/module3.md)로 GoGo!👏
 
