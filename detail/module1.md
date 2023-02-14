@@ -5,7 +5,8 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
 
 ![1-1](../images/1-1.png)
 
-### Module Steps (👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*)
+### Module Steps 
+👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*
 1. On-premises 리전에 대한 AWS 리소스 배포<br>
     a. 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. On-premises 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.<br>
     
