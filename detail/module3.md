@@ -5,7 +5,8 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
 
 ![3-1](../images/3-1.png)
 
-### Module Steps (👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*)
+### Module Steps 
+####(👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*)
 
 1. **Activate the Storage Gateway**<br>
 바로 전 Module2에서 DataSync agent를 활성화한 것처럼 Storage Gateway에 대해 비슷한 단계를 수행하여 IN-CLOUD 리전에서 활성화해야 합니다. 아래 단계를 따라서 진행합니다.
@@ -21,7 +22,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
    9. **CloudWatch log group** 패널에서 *Deactivate logging*를 선택하고 **Configure**을 클릭합니다.
    10. 기본 Storage Gateway 페이지에 *DataMigrationGateway*라는 이름의 Gateway가 표시됩니다.
    
-   ![3-2](../images/3-2.png)
+  ![3-2](../images/3-2.png)
 
 2. **Create a Storage Gateway NFS share**
 
@@ -53,8 +54,8 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
     ```
     mount | grep nfs4
     ```
-
-    ![3-5](../images/3-5.png)
+    
+   ![3-5](../images/3-5.png)
 
 ### Validation Step
 
