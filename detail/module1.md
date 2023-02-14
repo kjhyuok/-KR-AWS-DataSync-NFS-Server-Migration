@@ -29,7 +29,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
       
 |Region Code|Region Name|Launch|
 |------|---|---|
-|us-east-1|US East(N. Virginia)|![Launch in us-east-1](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=DataMigrationWorkshop-inCloudResources&templateURL=https://aws-datasync-samples.s3-us-west-2.amazonaws.com/workshops/nfs-migration/data-migration-workshop-in-cloud.yaml)|
+|us-east-1|US East(N. Virginia)|[Launch in us-east-1](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=DataMigrationWorkshop-inCloudResources&templateURL=https://aws-datasync-samples.s3-us-west-2.amazonaws.com/workshops/nfs-migration/data-migration-workshop-in-cloud.yaml)|
 
    1. 스택 생성 페이지에서 다음을 클릭합니다.
    2. Next 클릭(스택 parameters 없음).
