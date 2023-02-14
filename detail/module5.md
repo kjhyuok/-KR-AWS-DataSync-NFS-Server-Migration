@@ -53,4 +53,4 @@ Storage Gateway 사용의 이점 중 하나는 파일을 S3에 완전하고 전�
     
 모든 CloudFormation 템플릿이 올바르게 삭제되었는지 확인하려면 이 워크샵에서 생성된 모든 EC2 인스턴스가 On-premises 영역에서 **terminated state**인지 확인하십시오.
         
-[README.md](https://github.com/kjhyuok/KR-AWS-DataSync-NFS-Server-Migration#readme)로 돌아가기!👏
+수고하셨습니다. 모든 실습을 완료 하셨습니다!👏👏👏
