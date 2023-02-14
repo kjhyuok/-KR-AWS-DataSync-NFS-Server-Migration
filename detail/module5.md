@@ -1,18 +1,19 @@
 # Module 5 : Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리
 
-S3 버킷에 모든 데이터가 있으므로 이제 NFS 서버를 종료하고 Storage Gateway만 사용하도록 전환할 준비가 되었습니다. 이 모듈에서는 NFS 서버를 마운트 해제하고 DataSync 리소스를 정리합니다. 그런 다음 Storage Gateway를 통해 일부 테스트 파일을 작성하여 S3 버킷에 저장되는지 확인합니다.<br>
+S3 버킷에 모든 데이터가 있으므로 이제 NFS 서버를 종료하고 Storage Gateway만 사용하도록 전환할 준비가 되었습니다. 이 모듈에서는 NFS 서버를 마운트 해제하고 DataSync 리소스를 정리합니다. 그런 다음 Storage Gateway를 통해 일부 테스트 파일을 작성하여 S3 버킷에 저장되는지 확인합니다.
 
 ![5-1](../images/5-1.png)
 
-### Module Steps (👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*)
-***
-1. **Unmount the NFS server**<br>
-Application 서버에서 CLI로 다음 명령을 실행하여 NFS 서버를 마운트 해제하십시오.<br>
+### Module Steps 
+👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*
+
+1. **Unmount the NFS server**
+Application 서버에서 CLI로 다음 명령을 실행하여 NFS 서버를 마운트 해제하십시오.
 ```
 $ sudo umount /mnt/data
 ```
 2. **Clean up DataSync resources**<br>
-DataSync를 완료했으므로 계속해서 리소스를 정리할 수 있습니다.<br>
+DataSync를 완료했으므로 계속해서 리소스를 정리할 수 있습니다.
     1. IN-CLOUD 리전 AWS 관리 콘솔로 이동하여 **DataSync** 서비스로 이동합니다.
     2. **Tasks**를 선택하고 이전에 생성한 task를 삭제합니다.
     3. **Locations**을 선택하고 이전에 생성한 locations을 삭제합니다.
@@ -20,25 +21,24 @@ DataSync를 완료했으므로 계속해서 리소스를 정리할 수 있습니
     5. 자동 생성된 **CloudWatch log group**을 삭제합니다.
 
 ### Validation Step
-***
-Application 서버에서 CLI로 다음 명령을 실행하여 Storage Gateway를 통해 AWS S3 버킷에 또 다른 새로운 파일을 생성해 봅니다.<br>
+Application 서버에서 CLI로 다음 명령을 실행하여 Storage Gateway를 통해 AWS S3 버킷에 또 다른 새로운 파일을 생성해 봅니다.
 ```
 sudo cp /mnt/fgw/images/00002.jpg /mnt/fgw/new-image2.jpg
 ```
-IN-CLOUD 리전 AWS 관리 콘솔로 돌아가서 AWS S3로 이동합니다. data-migration-workshop 버킷을 선택 후 버킷에 new-image2.jpg 파일이 새롭게 표시되어야 합니다.<br>
+IN-CLOUD 리전 AWS 관리 콘솔로 돌아가서 AWS S3로 이동합니다. data-migration-workshop 버킷을 선택 후 버킷에 new-image2.jpg 파일이 새롭게 표시되어야 합니다.
 
 ![5-2](../images/5-2.png)
 
-Application 서버가 컷오버를 완료했습니다! 이제 Storage Gateway share를 사용하여 NFS 서버에 있던 모든 파일을 읽을 수 있습니다. 그리고 share에 기록된 모든 새로운 파일은 자동으로 S3 버킷에 업로드됩니다. 이제 NFS 서버를 종료하고 폐기할 수 있습니다!<br>
+Application 서버가 컷오버를 완료했습니다! 이제 Storage Gateway share를 사용하여 NFS 서버에 있던 모든 파일을 읽을 수 있습니다. 그리고 share에 기록된 모든 새로운 파일은 자동으로 S3 버킷에 업로드됩니다. 이제 NFS 서버를 종료하고 폐기할 수 있습니다!
 
-Storage Gateway 사용의 이점 중 하나는 파일을 S3에 완전하고 전체적으로 액세스 가능한 객체로 저장한다는 것입니다. 이제 S3의 데이터로 Amazon Athena, Amazon SageMaker, Amazon EMR 및 기타 많은 AWS 서비스를 사용하여 데이터를 통한 훨씬 더 큰 가치와 통찰력을 얻을 수 있습니다.<br>
+Storage Gateway 사용의 이점 중 하나는 파일을 S3에 완전하고 전체적으로 액세스 가능한 객체로 저장한다는 것입니다. 이제 S3의 데이터로 Amazon Athena, Amazon SageMaker, Amazon EMR 및 기타 많은 AWS 서비스를 사용하여 데이터를 통한 훨씬 더 큰 가치와 통찰력을 얻을 수 있습니다.
 
 ### Workshop Cleanup
-***
-이 워크샵 시나리오 이후에 모든 리소스가 삭제되었는지 확인하려면 아래에 설명된 순서에 따라 단계를 실행하세요.<br>
-(꼭 Cloud Formation이 resource 삭제를 완료할 때까지 기다린 후 다음 단계로 이동할 필요는 없습니다!)<br>
 
-   1. 다음 명령을 실행하여 Application 서버에서 Storage Gateway NFS share를 마운트 해제합니다.<br>
+이 워크샵 시나리오 이후에 모든 리소스가 삭제되었는지 확인하려면 아래에 설명된 순서에 따라 단계를 실행하세요.<br>
+(꼭 Cloud Formation이 resource 삭제를 완료할 때까지 기다린 후 다음 단계로 이동할 필요는 없습니다!)
+
+   1. 다음 명령을 실행하여 Application 서버에서 Storage Gateway NFS share를 마운트 해제합니다.
    
     
     sudo umount /mnt/fgw
@@ -49,8 +49,8 @@ Storage Gateway 사용의 이점 중 하나는 파일을 S3에 완전하고 전�
    4. IN-CLOUD 리전의 *DataMigrationGateway*라는 이름의 **Storage Gateway**를 삭제합니다. 게이트웨이 EC2 인스턴스는 삭제되지 않습니다. On-premises 리전의 CloudFormation 이 삭제되면 인스턴스가 삭제됩니다.
    5. IN-CLOUD 리전에서 **data-migration-workshop** S3 버킷의 모든 개체를 삭제합니다. S3 버킷은 다음 단계에서 CloudFormation에 의해 삭제되기 전에 *empty* 상태로 있어야 합니다.
    6. IN-CLOUD 리전의 **CloudFormation** 페이지로 이동하여 *DataMigrationWorkshop-inCloudResources*이라는 stack을 삭제합니다.
-   7. On-premises 리전의 **CloudFormation** 페이지로 이동하여 *DataMigrationWorkshop-onPremResources*이라는 stack을 삭제합니다.<br>
+   7. On-premises 리전의 **CloudFormation** 페이지로 이동하여 *DataMigrationWorkshop-onPremResources*이라는 stack을 삭제합니다.
     
-모든 CloudFormation 템플릿이 올바르게 삭제되었는지 확인하려면 이 워크샵에서 생성된 모든 EC2 인스턴스가 On-premises 영역에서 **terminated state**인지 확인하십시오.<br><br>
+모든 CloudFormation 템플릿이 올바르게 삭제되었는지 확인하려면 이 워크샵에서 생성된 모든 EC2 인스턴스가 On-premises 영역에서 **terminated state**인지 확인하십시오.
         
 [README.md](https://github.com/kjhyuok/KR-AWS-DataSync-NFS-Server-Migration#readme)로 돌아가기!👏
