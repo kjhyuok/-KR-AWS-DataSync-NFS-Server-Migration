@@ -4,7 +4,8 @@
 DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destination** 두 ![location](https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html)이 필요합니다. DataSync에서 **location**는 파일이 상주하거나 복사될 Endpoint입니다. **location**은 NFS 내보내기, SMB 공유, Amazon S3 버킷, HDFS, Windows용 FSx, Lustre용 FSx 또는 Amazon EFS 파일 시스템일 수 있습니다. location object는 task와 독립적이며 단일 location을 여러 task에 사용할 수 있습니다.
 
 ![2-1](../images/2-1.png)
-### Module Steps (👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*)
+### Module Steps 
+👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*
 1. IN-CLOUD 리전에서 **Activate the DataSync agent**<br>
 Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 리전에서 활성화해야 합니다. Agent를 활성화하려면 아래 단계를 따르세요.
 
