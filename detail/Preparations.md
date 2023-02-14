@@ -3,7 +3,7 @@
 만약 default page가 한글이라면, 다음과 같이 **Eng**으로 설정해 봅니다.
 
 1. 우측상단의 ID@Account No. 선택<br>
-![intro]<img src="../images/0-1.png" width="100" height="100"/>
+
 <img src = "../images/0-1.png" width = "50%" height = "50%">  
 3. ㅇㄹ
 
