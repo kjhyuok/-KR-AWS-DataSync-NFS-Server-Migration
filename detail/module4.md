@@ -58,5 +58,5 @@ Application 서버용 CLI로 돌아가서 "ls /mnt/fgw" 명령을 반복해 보�
 
 NFS 서버에서 S3로 모든 데이터가 복사되었으므로 이제 컷오버를 수행할 준비가 되었습니다.
 
-[Module5](../detail/module5.md)로 GoGo!👏
+마지막 단계인 [Module5](../detail/module5.md)로 GoGo!👏
 
