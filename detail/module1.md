@@ -54,15 +54,15 @@ IN-CLOUD 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **O
 
 ![1-3](../images/1-3.png)
 
-4. Application server에 연결하기<br>
-    1. On-premises 리전의 AWS 콘솔에서 서비스를 클릭하고 **EC2**를 선택하고,
+4. Application server에 연결하기
+    1. On-premises 리전의 AWS 콘솔에서 서비스를 클릭하고 **EC2**를 선택하고
     2. 왼쪽 메뉴에서 **Instance**를 선택합니다.
     3. Application Server 인스턴스를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 **Connect**을 선택합니다.
 On-premises CloudFormation 템플릿을 배포할 때 EC2 Key Pair을 구성한 경우 컴퓨터에서 SSH 클라이언트를 사용하여 연결할 수 있습니다.
 
 ![1-4](../images/1-4.png)
 
-그렇지 않으면 **EC2 Instance Connect** 또는 Session Manager를 사용하여 브라우저를 통해 직접 인스턴스에 연결할 수 있습니다.
+그렇지 않으면 **EC2 Instance Connect** 또는 **Session Manager**를 사용하여 브라우저를 통해 직접 인스턴스에 연결할 수 있습니다.
 
 ![1-5](../images/1-5.png)
 
@@ -79,7 +79,6 @@ $ ls /mnt/data/images
 /mnt/data/images 폴더에서 아래와 같이 200개의 이미지 파일을 볼 수 있는데 이런 이미지 파일은 AWS IN-CLOUD 리전의 S3 버킷으로 마이그레이션될 현재 On-premises의 NFS 서버내 데이터를 나타냅니다.
 
 ![1-6](../images/1-6.png)
-
 ### Module1 Summary
 Module1 에서는 On-premises 리전 및 IN-CLOUD 리전 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다.
 그리고 Application 서버에 NFS export를 마운트하고 약 200여개의 jpg 데이터 세트를 확인했는데요? 그렇다면 다음 모듈에서는 NFS 서버에서 S3 버킷으로 초기 파일 복사를 수행하는 DataSync 작업을 생성해 보겠습니다.
