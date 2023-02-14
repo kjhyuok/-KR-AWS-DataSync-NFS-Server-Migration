@@ -12,7 +12,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
     
 |Region Code|Region Name|Launch|
 |------|---|---|
-|us-east-1|US East(N. Virginia)|![Launch in us-east-1](<https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create?stackName=DataMigrationWorkshop-onPremResources&templateURL=https://aws-datasync-samples.s3-us-west-2.amazonaws.com/workshops/nfs-migration/data-migration-workshop-on-prem.yaml>)|
+|us-east-1|US East(N. Virginia)|[Launch in us-east-1](<https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create?stackName=DataMigrationWorkshop-onPremResources&templateURL=https://aws-datasync-samples.s3-us-west-2.amazonaws.com/workshops/nfs-migration/data-migration-workshop-on-prem.yaml>)|
 
    1. 스택 생성 페이지에서 다음을 클릭합니다.
    2. 로컬 SSH 클라이언트를 사용하여 이 워크샵에서 생성된 EC2 인스턴스에 액세스하려면 선택한 리전에서 EC2 키 쌍의 이름을 입력하십시오. 그렇지 않으면 키 쌍을 비워 둘 수 있습니다.
