@@ -21,7 +21,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
    9. **CloudWatch log group** 패널에서 *Deactivate logging*를 선택하고 **Configure**을 클릭합니다.
    10. 기본 Storage Gateway 페이지에 *DataMigrationGateway*라는 이름의 Gateway가 표시됩니다.
    
-   ![3-2](../images/3-2.png)<br>
+   ![3-2](../images/3-2.png)
 
 2. **Create a Storage Gateway NFS share**
 
