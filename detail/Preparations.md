@@ -42,4 +42,4 @@ AWS Web Console을 본 실습의 화면캡쳐 기준인 **Eng**로 설정합니�
 
 우측 상단메뉴에 region이 **N. Virginia** 으로 설정된 것을 확인할 수 있습니다.
 
-###여기까지 확인 하신분들은 [Module1](../detail/module1.md) 으로 gogo~
+#### 여기까지 확인 하신분들은 [Module1](../detail/module1.md) 으로 gogo~
