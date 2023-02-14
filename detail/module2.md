@@ -40,7 +40,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     7. Click **Create location**: 페이지 왼쪽에서 **Locations**를 다시 클릭합니다. 이제 두 개의 locations가 나열되는데 하나는 NFS 서버용이고 다른 하나는 S3 버킷용입니다.
     ![2-6](../images/2-6.png)
 
-4. **Create a task**<br>
+4. **Create a task**
     1. DataSync 서비스 페이지의 왼쪽에서 **Tasks**를 클릭한 다음 **Create task**을 클릭합니다.
     2. *Source location option*에서 **Choose an existing location**을 선택합니다.
     3. *Existing locations* 드롭다운에서 이전에 생성한 NFS 서버 location를 선택합니다.
