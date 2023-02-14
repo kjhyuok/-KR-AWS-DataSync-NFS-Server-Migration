@@ -1,4 +1,4 @@
-## Module 1 : On-premises 및 IN-CLOUD 리전에 실습용 AWS Resource 배포
+# Module 1 : On-premises 및 IN-CLOUD 리전에 실습용 AWS Resource 배포
 
 Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리전(On-premises 및 IN-CLOUD)에 리소스를 배포합니다.<br>
 하나는 On-premises 환경을 나타내고 다른 하나는 CLOUD 내 환경을 나타내는데, 우선 모든 리소스가 배포되면 Application 서버의 NFS 서버에서 내보내기를 마운트하고 기존 파일을 확인합니다.
