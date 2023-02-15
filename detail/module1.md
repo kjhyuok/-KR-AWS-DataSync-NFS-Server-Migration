@@ -84,4 +84,4 @@ $ ls /mnt/data/images
 Module1 에서는 On-premises 리전 및 IN-CLOUD 리전 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다.
 그리고 Application 서버에 NFS export를 마운트하고 약 200여개의 jpg 데이터 세트를 확인했는데요? 그렇다면 다음 모듈에서는 NFS 서버에서 S3 버킷으로 초기 파일 복사를 수행하는 DataSync 작업을 생성해 보겠습니다.
 
-**이제 환경구성을 마무리 하고, [Module2](../detail/module2.md)로 이동해 봅시다.
+이제 환경구성을 마무리 하고, [Module2](../detail/module2.md)로 이동해 봅시다.
