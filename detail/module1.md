@@ -7,7 +7,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
 
 ### Module Steps 
 👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*
-1. On-premises 리전에 대한 AWS 리소스 배포<br>
+1. **On-premises 리전에 대한 AWS 리소스 배포**<br>
     a. 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. On-premises 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.<br>
     
 |Region Code|Region Name|Launch|
@@ -24,7 +24,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
 참고: 이 CloudFormation 템플릿의 일부로 시작된 인스턴스는 몇 분 동안 초기화 중 상태일 수 있습니다.<br>
 자~ 이제 On-premises 리전에서 이 CloudFormation 배포가 진행되는 동안 IN-CLOUD 리전에 대한 리소스를 또 다른 CloudFormation으로 동시에 배포를 진행해 보시죠.
 
-2. IN-CLOUD 리전에 대한 AWS 리소스 배포<br>
+2. **IN-CLOUD 리전에 대한 AWS 리소스 배포**<br>
       a. 역시 실습 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. IN-CLOUD 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.<br>
       
 |Region Code|Region Name|Launch|
@@ -36,12 +36,12 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 두 개의 AWS 리
    3. Next을 다시 클릭(옵션 및 고급 옵션 섹션 건너뛰기)
    4. review 페이지에서 아래로 스크롤하여 CloudFormation이 IAM 리소스를 생성함을 확인하는 확인란을 선택한 다음 스택 생성을 클릭합니다.
 
-참고: 다음 단계를 진행하기 전에 각 리전의 CloudFormation 스택이 CREATE_COMPLETE 상태에 도달할 때까지 기다리십시오. 우리가 지금 실행 한 위의 2개 CloudFormation 스택이 완료되는 데 약 *10분*이 소요됩니다.
+참고: 다음 단계를 진행하기 전에 각 리전의 CloudFormation 스택이 CREATE_COMPLETE 상태에 도달할 때까지 기다리십시오. 우리가 지금 실행 한 위의 2개 CloudFormation 스택이 완료되는 데 약 ***10분***이 소요됩니다.
 
-3. Stack Outputs<br>
+3. **Stack Outputs**<br>
 완료되면 각 CloudFormation 스택에 "**Outputs**" 목록이 표시됩니다. IP Address 및 Resource Name과 같은 values는 이 실습 전체에서 사용되니 가급적 이런 Outputs values를 다른 곳에 복사하시고 실습을 진행하면서 활용하시면 좀 더 원활한 진행이 가능 합니다.<br>
 On-premises 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **Outputs** 탭을 클릭합니다.<br>
-다음과 같은 4가지 값이 표시됩니다:
+다음과 같은 ***4가지 값***이 표시됩니다:
 * **appServerPrivateIP** – Application 서버의 private IP 주소입니다. NFS 내보내기에 대한 액세스를 제한하기 위해 Storage Gateway file 공유를 생성할 때 이 옵션을 사용합니다.
 * **dataSyncAgentPublicIP** – DataSync agent를 실행하는 EC2 인스턴스의 public IP 주소입니다. DataSync agent를 활성화할 때 사용합니다.
 * **fileGatewayPublicIP** – File Gateway를 실행하는 EC2 인스턴스의 public IP 주소입니다. 이 옵션은 Storage Gateway를 활성화할 때 사용합니다.
@@ -55,7 +55,7 @@ IN-CLOUD 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **O
 
 ![1-3](../images/1-3.png)
 
-4. Application server에 연결하기
+4. **Application server에 연결하기**
     1. On-premises 리전의 AWS 콘솔에서 서비스를 클릭하고 **EC2**를 선택하고
     2. 왼쪽 메뉴에서 **Instance**를 선택합니다.
     3. Application Server 인스턴스를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 **Connect**을 선택합니다.
@@ -84,4 +84,4 @@ $ ls /mnt/data/images
 Module1 에서는 On-premises 리전 및 IN-CLOUD 리전 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다.
 그리고 Application 서버에 NFS export를 마운트하고 약 200여개의 jpg 데이터 세트를 확인했는데요? 그렇다면 다음 모듈에서는 NFS 서버에서 S3 버킷으로 초기 파일 복사를 수행하는 DataSync 작업을 생성해 보겠습니다.
 
-이제 환경구성을 마무리 하고, [Module2](../detail/module2.md)로 이동해 봅시다.
+이제 환경구성을 마무리 하고, **[Module2](../detail/module2.md)**로 이동해 봅시다.
