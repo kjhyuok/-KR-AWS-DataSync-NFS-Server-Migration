@@ -1,4 +1,4 @@
-# Module 3 : Storage Gateway를 사용한 온프레미스 &rarr; AWS S3로의 액세스
+# Module 3 : On-premises의 Application은 Storage Gateway를 사용해서 AWS S3로 액세스 해볼까요?
 
 이제 NFS 서버에서의 파일이 S3 버킷으로 복사되었습니다. 이 모듈에서는 CloudFormation에 의해 배포된 File Gateway를 구성하여 온프레미스 지역에서 S3 버킷과 연결하고 [**Storage Gateway**](https://aws.amazon.com/ko/storagegateway/) NFS share를 통해 S3 버킷의 파일에 접근할 수 있도록 액세스를 제공할 예정 입니다.<br>
 Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 대한 액세스를 확인해 봅시다.
