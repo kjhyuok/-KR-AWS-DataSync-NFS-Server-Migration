@@ -1,4 +1,4 @@
-# Module 2 : DataSync를 사용하여 S3에 초기 파일 복사
+# Module 2 : On-premises NFS를 AWS S3로 대체하기 위해 DataSync를 사용하여 현 스토리지를 마이그레이션 해 봅니다.
 
 이 모듈에서는 On-premises 리전에 배포된 DataSync Agent를 활성화하고 DataSync location를 생성한 다음 Source location에서 Destination location로 데이터를 복사하는 DataSync 작업을 생성합니다.<br><br>
 DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destination** 두 ![location](https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html)이 필요합니다. DataSync에서 **location**는 파일이 상주하거나 복사될 Endpoint입니다. **location**은 NFS 내보내기, SMB 공유, Amazon S3 버킷, HDFS, Windows용 FSx, Lustre용 FSx 또는 Amazon EFS 파일 시스템일 수 있습니다. location object는 task와 독립적이며 단일 location을 여러 task에 사용할 수 있습니다.
