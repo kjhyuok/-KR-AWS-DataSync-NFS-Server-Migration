@@ -5,7 +5,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 기존 AWS의 Workshop인 [**AWS DataSync: NFS Server Migration**]([https://catalog.us-east-1.prod.workshops.aws/workshops/976050cc-0606-4b23-b49f-ca7b8ac4b153/en-US/](https://catalog.workshops.aws/datasync-nfs-server-migration-with-storage-gateway/en-US))을 한글화 하고, 실습자에게 필요한 부분을 재구성 했습니다.<br>
 본 Workshop은 약 1~1.5시간 정도 소요되며, 활용되는 AWS Resource 목록은 다음과 같습니다.
 
-* [AWS Datasync](https://aws.amazon.com/ko/datasync/), [Amazon S3](https://aws.amazon.com/ko/s3/), [AWS Storage gateway](https://aws.amazon.com/ko/storagegateway/) 그리고 코드기반으로 실습환경을 자동으로 프로비저닝해 줄 [AWS Formation](https://aws.amazon.com/ko/cloudformation/)이 활용됩니다.
+* [AWS Datasync](https://aws.amazon.com/ko/datasync/), [Amazon S3](https://aws.amazon.com/ko/s3/), [AWS Storage gateway](https://aws.amazon.com/ko/storagegateway/) 그리고 코드기반으로 실습환경을 자동으로 프로비저닝해 줄 [AWS CloudFormation](https://aws.amazon.com/ko/cloudformation/)이 활용됩니다.
 
 ### 워크샵 시나리오: AWS DataSync 및 AWS Storage Gateway를 사용한 NFS 서버 마이그레이션
 온프레미스에 오래된 NFS 서버가 있고, NFS 서버에 있는 대부분의 데이터는 몇 년 된 것이며 가끔 읽기 위해서만 액세스됩니다.<br>서버에 새 파일이 기록되고 있지만 자주 기록되지는 않습니다. 온프레미스 공간을 줄이고 리소스 확보를 위해 NFS 서버의 데이터를 클라우드로 이동하려고 합니다만 NFS 데이터에 액세스하는 Application 서버는 아직 이동할 수 없는 상황입니다.<br><br>
