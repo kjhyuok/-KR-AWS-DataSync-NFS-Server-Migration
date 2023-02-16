@@ -31,11 +31,11 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 ### Workshop 모듈 및 소개
 이 워크샵은 다음 5개의 모듈로 구성되나 Preparations 단계를 통해서 사전 설정을 진행 합니다.
 * [Preparations](./detail/Preparations.md) - 실습 사전 준비
-* [Module1](./detail/module1.md) - On-premises 리전 및 IN-CLOUD 리전 실습용 AWS Resource 배포
+* [Module1](./detail/module1.md) - 실습용 AWS Resource 배포(가상의 On-premises와 클라우드 인프라 구성)
 * [Module2](./detail/module2.md) - DataSync를 사용하여 S3에 초기 파일을 복사
-* [Module3](./detail/module3.md) - Storage Gateway를 사용한 On-premises 리전 &rarr; IN-CLOUD 리전내 S3로의 액세스
+* [Module3](./detail/module3.md) - Storage Gateway를 사용한 On-premises &rarr; 클라우드내 S3로의 액세스
 * [Module4](./detail/module4.md) - 컷오버 수행 전 마지막 증분 데이터 복제
-* [Module5](./detail/module5.md) - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리
+* [Module5](./detail/module5.md) - Storage Gateway로 컷오버
 * [Module6](./detail/module6.md) - AWS S3를 더 저렴하게 사용해 보기
-* [CleanUp](./detail/CleanUp.md) - 실습애 사용했던 모든 자원을 정리
+* [CleanUp](./detail/CleanUp.md) - 실습에 사용했던 모든 자원을 정리<br><br>
 자~ 이제 실습 준비를 위해 [Preparations](./detail/Preparations.md)으로 이동해 볼까요?
