@@ -35,7 +35,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 * [Module2](./detail/module2.md) - DataSync를 사용하여 S3에 초기 파일을 복사
 * [Module3](./detail/module3.md) - Storage Gateway를 사용한 On-premises 리전 &rarr; IN-CLOUD 리전내 S3로의 액세스
 * [Module4](./detail/module4.md) - 컷오버 수행 전 마지막 증분 데이터 복제
-* [Module5](./detail/module5.md) - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리<br><br>
+* [Module5](./detail/module5.md) - Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리
 * [Module6](./detail/module6.md) - AWS S3를 더 저렴하게 사용해 보기
 * [CleanUp](./detail/CleanUp.md) - 실습애 사용했던 모든 자원을 정리
 자~ 이제 실습 준비를 위해 [Preparations](./detail/Preparations.md)으로 이동해 볼까요?
