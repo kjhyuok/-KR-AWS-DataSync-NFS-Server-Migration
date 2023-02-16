@@ -33,3 +33,5 @@ Application 서버가 컷오버를 완료했습니다! 이제 Storage Gateway sh
 
 Storage Gateway 사용의 이점 중 하나는 파일을 S3에 완전하고 전체적으로 액세스 가능한 객체로 저장한다는 것입니다. 이제 S3의 데이터로 Amazon Athena, Amazon SageMaker, Amazon EMR 및 기타 많은 AWS 서비스를 사용하여 데이터를 통한 훨씬 더 큰 가치와 통찰력을 얻을 수 있습니다.
 
+마지막 단계인 [Module6](../detail/module6.md)로 GoGo!👏
+
