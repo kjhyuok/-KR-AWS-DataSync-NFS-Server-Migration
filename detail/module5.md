@@ -1,4 +1,4 @@
-# Module 5 : Storage Gateway로 컷오버, NFS 서버 종료 및 워크샵 정리
+# Module 5 : Storage Gateway로 컷오버
 
 S3 버킷에 모든 데이터가 있으므로 이제 NFS 서버를 종료하고 Storage Gateway만 사용하도록 전환할 준비가 되었습니다. 이 모듈에서는 NFS 서버를 마운트 해제하고 DataSync 리소스를 정리합니다. 그런 다음 Storage Gateway를 통해 일부 테스트 파일을 작성하여 S3 버킷에 저장되는지 확인합니다.
 
