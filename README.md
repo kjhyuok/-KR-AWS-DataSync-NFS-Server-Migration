@@ -1,4 +1,4 @@
-# 이제 온프레미스에서도 AWS Storage Gateway, AWS datasync 활용하여 AWS S3를 사용해 봅시다!
+# 이제 온프레미스에서도 AWS Storage Gateway, AWS datasync를 활용하여 AWS S3를 NFS 처럼 사용해 봅시다!
 
 **AWS Builders Online 2023** 스토리지 학습에 오신 여러분들을 환영합니다.😃<br>
 AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단순화, 자동화 및 가속화하는 AWS 온라인 데이터 전송 서비스인 **AWS Datasync**를 사용해 온프레미스에 위치한 NFS 서버를 AWS S3로 마이그레이션 하고, 온프레미스에 있는 Application 서버가 사용하던 NFS를 **AWS File Gateway**를 통해 S3로 대체해 보는 워크샵(실습)을 진행해 볼 예정입니다.<br>
