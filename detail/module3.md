@@ -31,13 +31,22 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
 
 2. **Create a Storage Gateway NFS share**
 
-    1. **Create file share** 버튼을 클릭합니다.
-    2. 방금 생성된 게이트웨이를 선택합니다.
-    3. **Amazon S3 bucket name**에 DataSync가 파일을 복사한 S3 버킷의 이름을 입력합니다. 버킷 이름은 **IN-CLOUD** 리전의 CloudFormation 스택 *Outputs*에서 확인할 수 있습니다. **S3 prefix name**은 비워 둡니다.
-    4. *Access objects using* 설정에서 **NFS**가 선택되어 있는지 확인합니다. **Automated cache refresh from S3**을 없음으로 설정합니다.
-    5. Click **Next**.
-    6. default S3 스토리지 설정을 유지한 후 **Next**를 클릭합니다.
-    7. **Access object** 섹션에서 **Add client**를 클릭하고, Application 서버의 **Private IP Address**를 추가한 후 "/32"를 추가합니다. 이렇게 하면 Application 서버만 게이트웨이의 NFS 파일 공유에 액세스할 수 있습니다.
+    1. Storage Gateway의 좌측 메뉴에서 **File shares**를 선택하고, **Create File share** 버튼을 클릭합니다.
+    2. 방금 생성된 *DataMigrationGateway* 를 선택합니다.
+    3. *Access objects using* 설정에서 **NFS** 선택합니다.
+    4. **Amazon S3 bucket name**에 DataSync가 파일을 복사한 S3 버킷의 이름(*data-migration-workshop-xxxx*)을 입력합니다. 버킷 이름은 CloudFormation 스택 *Outputs*에서 확인할 수 있습니다.
+    5. **Customize configuration** 을 클릭합니다.
+    
+    ![3-2-1](../images/3-2-1.png)
+       
+    7. **Automated cache refresh from S3**을 None으로 설정하고 **Next** 클릭 합니다.
+    8. **S3 prefix name**은 비워 둡니다.
+    9. Click **Next**.
+
+    ![3-2-2](../images/3-2-2.png)
+
+    11. default S3 스토리지 설정을 유지한 후 **Next**를 클릭합니다.
+    12. **Access object** 섹션에서 **Add client**를 클릭하고, Application 서버의 **Private IP Address**를 추가한 후 "/32"를 추가합니다. 이렇게 하면 Application 서버만 게이트웨이의 NFS 파일 공유에 액세스할 수 있습니다.
     
     ![3-3](../images/3-3.png)
     
@@ -70,7 +79,12 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
 diff -qr /mnt/data /mnt/fgw
 ```
 /mnt/fgw: .aws-datasync-metadata에 하나의 추가 파일만 표시되어야 합니다.<br>
-이 파일은 작업이 실행될 때 S3 버킷의 DataSync에 의해 생성되었는데 다른 모든 파일은 동일하며 데이터가 오류 없이 DataSync에 의해 완전히 전송되었음을 나타냅니다.
+이 파일은 작업이 실행될 때 S3 버킷의 DataSync에 의해 생성되었는데 다른 모든 파일은 동일하며 데이터가 오류 없이 DataSync에 의해 완전히 전송되었음을 나타냅니다.<br>
+다음 명령을 실행하여 Application 서버가 Storage gateway와 잘 마운트 되고 S3에 저장된 파일들이 보이는지 확인해 보시기 바랍니다.
+
+```
+ls /mnt/fgw/images
+```
 
 ### Module3 Summary
 
