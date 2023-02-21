@@ -52,7 +52,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 * [Module3](detail/module3.md) - On-premises내 서버가 AWS Storage Gateway를 통해 Amazon S3로의 접근하기
 * [Module4](detail/module4.md) - On-premises내 서버가 NFS 컷오버(기존 NFS 연결해제) 수행 전 마지막 증분 데이터를 Amazon S3로 복제
 * [Module5](detail/module5.md) - AWS Storage Gateway로 컷오버하여 On-premises내 서버와 Amazon S3 간 완전한 연결
-* [Module6](broken-reference) - 이제 Amazon S3를 더 똑똑한 스토리지로 활용하기 위한 작업
+* [Module6](detail/module6/s3-1.md) - 이제 Amazon S3를 더 똑똑한 스토리지로 활용하기 위한 작업
 * [Module7](detail/module7.md) - CleanUp: 실습에 사용했던 모든 자원을 정리\
 
 
