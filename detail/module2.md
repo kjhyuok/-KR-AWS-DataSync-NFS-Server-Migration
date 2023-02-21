@@ -69,7 +69,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     5. *Destination location* 옵션에서 **Choose an existing location**을 선택합니다.
     6. *Existing locations* 드롭다운에서 이전에 생성한 S3 버킷 위치를 선택합니다.
     7. Click **Next**.
-    8. **Verify data** 드롭다운에서 **Verify only the data transferred**을 선택합니다.(다른 모든 옵션은 기본 유지)
+    8. Task Name에는 ```StorageWorkshop```을 입력하시고 **Verify data** 드롭다운에서 **Verify only the data transferred**을 선택합니다.(다른 모든 옵션은 기본 유지)
     9. 작업 logging에서 *Autogenerate*을 선택하여 CloudWatch log group 및 리소스 정책을 생성합니다.
     
     ![2-8](../images/2-8.png)
@@ -99,7 +99,10 @@ IN-CLOUD 지역 관리 콘솔에서 **Services**를 선택한 다음 **S3**를 �
 ![2-13](../images/2-13.png)
 
 ### Module2 Summary
-이 모듈에서는 DataSync agent를 성공적으로 활성화하고 On-premises NFS 서버에서 AWS의 S3 버킷으로 파일을 복사하는 작업을 생성하고 그 파일이 성공적으로 복사되었는지 확인했습니다.<br>
+이 모듈에서는 DataSync agent를 성공적으로 활성화하고 On-premises NFS 서버에서 AWS의 S3 버킷으로 파일을 복사하는 작업을 생성하고 그 파일이 성공적으로 복사되었는지 확인했습니다.
+
+![2-14](../images/2-14.png)
+
 다음 [Module3](../detail/module3.md)에서는 On-premises 파일 게이트웨이를 생성해 보고 S3 버킷에 연결하여 NFS를 통해 AWS 클라우드 내의 파일에 액세스할 수 있도록 구성할 것입니다.
 
 [Module3](../detail/module3.md)로 GoGo!👏
