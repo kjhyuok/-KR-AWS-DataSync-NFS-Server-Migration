@@ -10,7 +10,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 ### 워크샵 시나리오: AWS DataSync 및 AWS Storage Gateway를 통해서 온프레미스 NFS를 정리하고, 저렴한 AWS 클라우드의 S3로 대체해 보기
 온프레미스에 오래된 NFS 서버가 있고, NFS 서버에 있는 대부분의 데이터는 몇 년 된 것이며 가끔 읽기 위해서만 액세스됩니다.<br>서버에 새 파일이 기록되고 있지만 자주 기록되지는 않습니다. 온프레미스 공간을 줄이고 리소스 확보를 위해 NFS 서버의 데이터를 클라우드로 이동하려고 합니다만 NFS 데이터에 액세스하는 Application 서버는 아직 이동할 수 없는 상황입니다.<br><br>
 몇 가지의 조사를 해본 결과 [AWS DataSync](https://aws.amazon.com/ko/datasync/)를 사용하여 온프레미스 NFS 서버에서 Amazon S3로 데이터를 마이그레이션할 수 있다는 것을 알게되었습니다. 데이터가 S3에 있을 때 [AWS Storage gateway](https://aws.amazon.com/ko/storagegateway/)를 사용하여 온프레미스에서 NFS 액세스를 제공할 수 있습니다.<br><br>
-이 워크샵에서는 **CloudFormation** 템플릿을 사용하여 리소스를 자동 배포하고 AWS 관리 콘솔을 사용하여 리소스를 적절하게 구성하는 방법을 설명합니다.<br>아래 아키텍처 다이어그램에 표시된 것처럼 NFS 서버, 애플리케이션 서버, DataSync 에이전트 및 File Gateway 어플라이언스가 사내환경(이하 *On-premises 리전*)을 시뮬레이션하는 AWS 리전에 배포됩니다. NFS 서버의 데이터가 마이그레이션될 AWS 클라우드 영역을 시뮬레이션하는 S3 버킷이 AWS 환경(이하 *IN-CLOUD 리전*)에 생성됩니다.<br>
+이 워크샵에서는 **CloudFormation** 템플릿을 사용하여 리소스를 자동 배포하고 AWS 관리 콘솔을 사용하여 리소스를 적절하게 구성하는 방법을 설명합니다.<br>아래 아키텍처 다이어그램에 표시된 것처럼 NFS 서버, 애플리케이션 서버, DataSync 에이전트 및 File Gateway 를 AWS 리전에 배포하고 On-Premise 환경을 시뮬레이션합니다. NFS 서버의 데이터가 마이그레이션될 AWS 클라우드 영역을 시뮬레이션하는 S3 버킷이 AWS 환경(이하 *IN-CLOUD 리전*)에 생성됩니다.<br>
 
 ![intro](./images/intro.png)
 
@@ -27,7 +27,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 #### Software
 인터넷 브라우저 - 이 워크샵에서는 최신 버전의 Chrome 또는 Firefox를 사용하는 것이 좋습니다.
 ### 비용
-이 Workshop을 따라서 실습하는 데 약 3.00 USD의 비용이 듭니다. Workshop을을 완료한 후 정리 지침에 따라 배포된 모든 리소스를 제거하고 AWS 계정에 대한 지속적인 비용을 제한하는 것이 좋습니다.
+이 Workshop을 따라서 실습하는 데 약 3.00 USD의 비용이 듭니다. Workshop을 완료한 후 정리 지침에 따라 배포된 모든 리소스를 제거하고 AWS 계정에 대한 지속적인 비용을 제한하는 것이 좋습니다.
 ### Workshop 모듈 및 소개
 이 워크샵은 다음 6개의 모듈로 구성되고 사전 Preparations 단계를 통해서 AWS Console 사용을 위한 기본적인 설정을 진행 합니다.
 * [Preparations](./detail/Preparations.md) - 실습 사전 준비
@@ -38,4 +38,5 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 * [Module5](./detail/module5.md) - AWS Storage Gateway로 컷오버하여 On-premises내 서버와 Amazon S3 간 완전한 연결
 * [Module6](./detail/module6.md) - 이제 Amazon S3를 더 똑똑한 스토리지로 활용하기 위한 작업
 * [Module7](./detail/module7.md) - CleanUp: 실습에 사용했던 모든 자원을 정리<br><br>
+(! CutOver란: 기존에 운영되던 정보시스템을 완전히 중단시키고, 새로 구축된 정보시스템을 본격 오픈하는 작업입니다. 본 실습 예제에서는 기존 On-premise NFS 서버를 Storage gw로 대체하는 작업을 지칭합니다.)<br>
 자~ 이제 실습 준비를 위해 [Preparations](./detail/Preparations.md)으로 이동해 볼까요?
