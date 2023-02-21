@@ -58,15 +58,11 @@ IN-CLOUD 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **O
     1. AWS 콘솔에서 서비스를 클릭하고 **EC2**를 선택합니다.
     2. 왼쪽 메뉴에서 **Instance**를 선택합니다.
     3. Application Server 인스턴스를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 **Connect**을 선택합니다.
-On-premises CloudFormation 템플릿을 배포할 때 EC2 Key Pair을 구성한 경우 컴퓨터에서 SSH 클라이언트를 사용하여 연결할 수도 있습니다.
-
-![1-4](../images/1-4.png)
-
-하지만 우리는 실습을 위해 **EC2 Instance Connect** 를 사용하여 브라우저를 통해 직접 인스턴스에 연결해 보겠습니다.
+       **EC2 Instance Connect** 를 사용하여 브라우저를 통해 직접 인스턴스에 연결해 보겠습니다.
 
 ![1-5](../images/1-5.png)
 
-EC2 Instance Connect 또는 Session Manager를 사용하는 경우 **Connect**합니다. Application 서버에 대한 명령줄 인터페이스(CLI)와 함께 브라우저에서 새 탭이 열립니다. 실습과정에서 이 탭을 사용하여 CLI기반으로 작업해야 하니 열어 두세요.
+EC2 Instance Connect를 선택하고 **Connect**를 클릭해주세요. 잠시 후 Application 서버에 대한 명령줄 인터페이스(CLI)와 함께 브라우저에서 새 탭이 열립니다. 실습과정에서 이 탭을 사용하여 CLI기반으로 작업해야 하니 열어 두세요.
 
 ### Validation Step
 Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버를 마운트하고 NFS에 저장되어 있는 파일들을 확인하세요.<br>
