@@ -32,7 +32,7 @@ Application 서버에서 CLI로 다음 명령을 실행하여 Storage Gateway를
 ```
 sudo cp /mnt/fgw/images/00002.jpg /mnt/fgw/new-image2.jpg
 ```
-IN-CLOUD 리전 AWS 관리 콘솔로 돌아가서 AWS S3로 이동합니다. data-migration-workshop 버킷을 선택 후 버킷에 new-image2.jpg 파일이 새롭게 표시되어야 합니다.
+AWS 관리 콘솔로 돌아가서 AWS S3로 이동합니다. data-migration-workshop-xxxx-xxxx-xxxx 버킷을 선택 후 버킷에 new-image2.jpg 파일이 새롭게 표시되어야 합니다.
 
 ![5-2](../images/5-2.png)
 
