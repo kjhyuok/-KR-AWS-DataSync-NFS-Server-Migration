@@ -36,7 +36,7 @@ Mount Path에는 아래를 넣어 주세요.
 /media/data
  ```
     
-    5. Click **Create location**.<br>
+   5. Click **Create location**.<br>
 
 3. **Create S3 location**
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations** 클릭한 다음 **Create location**을 클릭합니다.
