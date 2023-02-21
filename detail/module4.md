@@ -35,7 +35,7 @@ S3 버킷을 살펴보면 예상대로 새 파일이 있음을 알 수 있습니
 
 S3 버킷에 새 파일이 있으면 Application 서버의 Storage Gateway share를 통해 볼 수 있어야 합니다. 한 번 확인해 보시죠!
 ```
-s /mnt/data
+ls /mnt/data
 ls /mnt/fgw
 ```
 ![4-6](../images/4-6.png)
