@@ -15,12 +15,17 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
    2. Gateway가 없으면 **Get started** 버튼을 클릭하고 그렇지 않으면 **Create gateway** 버튼을 클릭합니다.
    3. Gateway 이름을 "*DataMigrationGateway*"로 지정하고 **Amazon S3 File Gateway** 유형을 선택합니다.
    4. 호스트 플랫폼으로 **Amazon EC2**를 선택하고 게이트웨이 설정 확인을 선택한 후 **Next**를 클릭합니다.
-   5. **Publicly accessible** endpoint 유형을 선택합니다.
-   6. 앞서 Module1과정에서 CloudFormation을 사용해서 생성된 File Gateway instance의 **Public IP address**를 입력하고, **Next**를 클릭합니다.
-   7. Gateway setting을 검토하고 **Next**를 클릭합니다.
-   8. Gateway가 활성화된 다음 로컬 디스크 장치를 준비하는 데 1분 정도 소요됩니다. **300GiB /dev/sdc** 장치를 **Cache**에 할당합니다. 자주 액세스하는 파일을 캐시하는 데 사용할 Gateway의 로컬 디스크입니다.
-   9. **CloudWatch log group** 패널에서 *Deactivate logging*를 선택하고 **Configure**을 클릭합니다.
-   10. 기본 Storage Gateway 페이지에 *DataMigrationGateway*라는 이름의 Gateway가 표시됩니다.
+   5. **Launch EC2 instance** 항목을 Customize your setting으로 지정 후 **Confirm set up gateway**에 체크하고 Next 클릭 합니다.
+
+   ![3-1-1](../images/3-1-1.png)
+   ![3-1-2](../images/3-1-2.png)
+
+   6. 앞서 Module1과정에서 CloudFormation을 사용해서 생성된 File Gateway instance(EC2명: fileGateway)의 **Public IP address**를 입력하고, **Next**를 클릭합니다.
+   7. **Publicly accessible** endpoint 유형을 선택합니다.
+   8. Gateway setting을 검토하고 **Next**를 클릭합니다.
+   9. Gateway가 활성화된 다음 로컬 디스크 장치를 준비하는 데 1분 정도 소요됩니다. **300GiB /dev/sdc** 장치를 **Cache**에 할당합니다. 자주 액세스하는 파일을 캐시하는 데 사용할 Gateway의 로컬 디스크입니다.
+   10. **CloudWatch log group** 패널에서 *Deactivate logging*를 선택하고 **Configure**을 클릭합니다.
+   11. 기본 Storage Gateway 페이지에 *DataMigrationGateway*라는 이름의 Gateway가 표시됩니다.
    
    ![3-2](../images/3-2.png)
 
