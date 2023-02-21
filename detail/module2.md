@@ -36,7 +36,7 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     
     ![2-4](../images/2-4.png)
     
-   Mount Path에는 아래를 넣어 주세요.
+   Mount Path에는 모듈1에서 확인한 것처럼 200장의 이미지가 저장되어 있었던 아래를 넣어 주세요.
    ```
    /media/data
    ```
