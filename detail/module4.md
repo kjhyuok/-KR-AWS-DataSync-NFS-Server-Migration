@@ -1,31 +1,33 @@
 # Module 4 : 컷오버 직전에 추가된 파일들에 대한 증분을 가져와 봅니다.
 
-이 모듈에서는 DataSync를 사용하여 증분 데이터 전송을 수행합니다.<br>
+이 모듈에서는 DataSync를 사용하여 증분 데이터 전송을 수행합니다.\
 이렇게하면 초기 데이터 복사 후 생성된 새 파일을 가져올 수 있고, On-premises NFS 서버에서의 모든 파일이 복사 되었음이 확인되면 컷오버를 진행할 수 있습니다.
 
-![4-1](../images/4-1.png)
+![4-1](<../images/3-1 (11).png>)
 
 ### Module Steps
-👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*
-1. **Create a new file on the NFS server**<br>
-Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버에 새 파일을 생성합니다.
+
+👉🏻_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다._
+
+1. **Create a new file on the NFS server**\
+   Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버에 새 파일을 생성합니다.
+
 ```
 sudo cp /mnt/data/images/00001.jpg /mnt/data/new-image.jpg
 ```
 
-2. **Copy the new file to the S3 bucket**<br>
-NFS 서버에서 S3 버킷으로 파일을 복사하는 DataSync 작업을 이미 생성했습니다. 새 파일을 복사하려면 작업을 다시 실행하면 됩니다. DataSync는 소스와 대상 간에 변경된 파일만 복사합니다.
+2.  **Copy the new file to the S3 bucket**\
+    NFS 서버에서 S3 버킷으로 파일을 복사하는 DataSync 작업을 이미 생성했습니다. 새 파일을 복사하려면 작업을 다시 실행하면 됩니다. DataSync는 소스와 대상 간에 변경된 파일만 복사합니다.
 
-   1. AWS 관리 콘솔로 돌아가서 **DataSync** 서비스로 이동합니다.
-   2. 이전에 생성한 작업을 선택하고 **Start** 버튼과 **Start with defaults**을 클릭합니다.
-   3. 기록 탭으로 이동하고 목록에서 최신 작업 실행을 선택합니다.
+    1. AWS 관리 콘솔로 돌아가서 **DataSync** 서비스로 이동합니다.
+    2. 이전에 생성한 작업을 선택하고 **Start** 버튼과 **Start with defaults**을 클릭합니다.
+    3. 기록 탭으로 이동하고 목록에서 최신 작업 실행을 선택합니다.
 
-   ![4-2](../images/4-2.png)
+    ![4-2](../images/4-2.png)
 
 작업을 완료하는 데 몇 분 정도 걸리는데 작업이 완료되면 stats을 살펴보세요. 지난번과 똑같은 작업을 실행했지만 1개의 파일만 복사되고 aws-datasync-metadata가 갱신되었습니다.(새 파일 및 새 파일이 포함된 폴더의 변경 사항).
 
-![4-3](../images/4-3.png)
-![4-4](../images/4-4.png)
+![4-3](../images/4-3.png) ![4-4](../images/4-4.png)
 
 S3 버킷을 살펴보면 예상대로 새 파일이 있음을 알 수 있습니다.
 
@@ -34,10 +36,12 @@ S3 버킷을 살펴보면 예상대로 새 파일이 있음을 알 수 있습니
 ### Validation Step
 
 S3 버킷에 새 파일이 있으면 Application 서버의 Storage Gateway share를 통해 볼 수 있어야 합니다. 한 번 확인해 보시죠!
+
 ```
 ls /mnt/data
 ls /mnt/fgw
 ```
+
 ![4-6](../images/4-6-1.png)
 
 자.. 우리는 DataSync를 사용하여 NFS 서버에서 S3로 파일을 복사했고 Storage Gateway는 S3 버킷에 연결되어 있습니다. 그런데? Application 서버의 Storage Gateway 공유에서 파일을 볼 수 없는 이유는 무엇입니까?
@@ -58,5 +62,4 @@ Application 서버용 CLI로 돌아가서 "ls /mnt/fgw" 명령을 반복해 보�
 
 NFS 서버에서 S3로 모든 데이터가 복사되었으므로 이제 컷오버를 수행할 준비가 되었습니다.
 
-[Module5](../detail/module5.md)로 GoGo!
-
+[Module5](module5.md)로 GoGo!
