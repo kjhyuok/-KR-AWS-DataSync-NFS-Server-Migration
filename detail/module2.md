@@ -31,6 +31,10 @@ Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 
     4. **On-premises 리전**의 CloudFormation Outputs에 따라 NFS 서버의 **Private IP address**를 입력합니다. 이것은 이전 모듈에서 Application 서버에 NFS 내보내기를 마운트하는 데 사용된 것과 동일한 IP 주소였습니다. DataSync agent가 NFS 내보내기를 마운트하는 데 사용할 IP address입니다.
     
     ![2-4](../images/2-4.png)
+Mount Path에는 아래를 넣어 주세요.
+```
+/media/data
+ ```
     
     5. Click **Create location**.<br>
 
