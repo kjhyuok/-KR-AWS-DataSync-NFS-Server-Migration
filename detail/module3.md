@@ -92,10 +92,9 @@ ls /mnt/fgw/images
 
 ### Module3 Summary
 
-이 모듈에서는 성공적으로 Storage Gateway를 활성화하고 gateway에 NFS File share를 생성했습니다.<br>
-그런 다음 Application 서버에 share를 마운트하고 On-premises NFS 서버의 파일이 S3 버킷에 올바르게 복사되었는지 확인했습니다.<br><br>
-이 실습의 궁극적인 목표는 On-premises NFS 서버를 종료하고 스토리지 리소스를 확보하는 것인데, 프로덕션 환경에서 이것은 일반적으로 Application 서버가 새로운 스토리지로 전환될 때 일시적인 다운타임이 발생하는 "*cutover point*"을 포함하며 이 실습에서는 Storage Gateway NFS share 입니다.<br>
-그러나 일반적으로 마이그레이션이 발생하는 동안 또는 그 직후에 생성되는 새 파일이 있으므로 컷오버 전에 또 다른 증분 파일 복사가 필요합니다.<br><br>
+이 모듈에서는 성공적으로 Storage Gateway를 활성화하고 NFS서버의 File share를 생성했습니다.<br>
+그런 다음 Application 서버에 File share를 마운트하고 On-premises NFS 서버의 파일이 S3 버킷에 올바르게 복사되었는지 확인 했습니다.<br><br>
+이 실습의 궁극적인 목표는 On-premises NFS 서버를 종료하고나서 AWS내 스토리지 리소스로 저장소를 변경하는 것인데, 일반적으로 마이그레이션이 발생하는 동안 또는 그 직 후에 생성되는 새로운 파일이 있으므로 최종 컷오버 전에 또 다른 증분 파일에 대한 S3로의 복사가 필요합니다.<br><br>
 따라서 다음 모듈에서는 Storage Gateway share로의 최종 컷오버 전에 증분 복사를 한 번 더 수행합니다.
 
 [Module4](../detail/module4.md)로 GoGo!👏
