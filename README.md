@@ -55,7 +55,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 * [Module6](detail/module6/s3-1.md) - 이제 Amazon S3를 더 똑똑한 스토리지로 활용하기 위한 작업
 * [Module7](detail/module7.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
 
-* [Contactme](detail/Contactme.md)
+* [Contact Me](detail/Contactme.md)
 
 
 _**Cut-Over란**_: 기존에 운영되던 정보시스템을 완전히 중단시키고, 새로 구축된 정보시스템을 본격 오픈하는 작업입니다. 본 실습 예제에서는 기존 On-premise내 NFS 서버를 AWS Storage gw로 대체하는 작업을 지칭합니다.
