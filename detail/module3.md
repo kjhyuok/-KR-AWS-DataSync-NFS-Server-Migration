@@ -66,14 +66,14 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
     ```
     sudo mkdir /mnt/fgw
     ```
-    2. Storage Gateway 파일 공유 페이지에서 Linux 탑재 명령을 복사하고 "[MountPath]"를 "/mnt/fgw"로 바꿉니다. **sudo로 명령을 실행해야 합니다.**
+    2. 전 단계에서 생성한 Storage Gateway > File Shares에서 하단의 *Linux Example Commands*를 Copy하여 "[MountPath]"를 "/mnt/fgw"로 바꿉니다. **sudo로 명령을 실행해야 합니다.**
     3. 이제 애플리케이션 서버에 두 개의 NFS 마운트 지점이 있어야 합니다. 하나는 온프레미스 NFS 서버용(/mnt/data에 mounted)과 Storage Gateway용(/mnt/fgw에 mounted)입니다.
     
     ```
     mount | grep nfs4
     ```
     
-![3-5](../images/3-5.png)
+    ![3-5-1](../images/3-5-1.png)
 
 ### Validation Step
 
