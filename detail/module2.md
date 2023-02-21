@@ -1,34 +1,38 @@
 # Module 2 : On-premises NFS를 AWS S3로 대체하기 위해 DataSync를 사용하여 현 스토리지를 마이그레이션 해 봅니다.
 
 이 모듈에서는 On-premises 리전에 배포된 DataSync Agent를 활성화하고 DataSync location를 생성한 다음 Source location에서 Destination location로 데이터를 복사하는 DataSync 작업을 생성합니다.<br><br>
-DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destination** 두 [location](https://docs.aws.amazon.com/ko_kr/datasync/latest/userguide/working-with-locations.html)이 필요합니다. DataSync에서 **location**는 파일이 상주하거나 복사될 Endpoint입니다. **location**은 NFS 내보내기, SMB 공유, Amazon S3 버킷, HDFS, Windows용 FSx, Lustre용 FSx 또는 Amazon EFS 파일 시스템일 수 있습니다. location object는 task와 독립적이며 단일 location을 여러 task에 사용할 수 있습니다.
+DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destination** 두 [**Location**](https://docs.aws.amazon.com/ko_kr/datasync/latest/userguide/working-with-locations.html)이 필요합니다. DataSync에서 사용할 **Location**은 파일이 현재 저장되어 있거나 앞으로 복사 할 Endpoint 입니다. **Location**은 NFS, SMB, Amazon S3, HDFS, Fsx for Windows, Fsx for Lustre, Amazon EFS가 될 수 있습니다. **Location** object는 task와 독립적이며 단일 **Location**을 여러 task에 사용할 수 있습니다.
 
 ![2-1](../images/2-1.png)
 ### Module Steps 
 👉🏻*Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.*
-1. IN-CLOUD 리전에서 **Activate the DataSync agent**<br>
+1. 먼저 **Data Sync Agent의 활성화**<br>
 Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 리전에서 활성화해야 합니다. Agent를 활성화하려면 아래 단계를 따르세요.
 
-   1. **IN-CLOUD** 리전의 AWS Management 콘솔 페이지로 이동하고 **Services**를 클릭한 다음 **DataSync**를 선택합니다.
+   1. AWS Management 콘솔 페이지로 이동하고 **Services**를 클릭한 다음 **DataSync**를 선택합니다.
    2. DataSync agent가 없으면 **Get started** 버튼을 클릭하고 그렇지 않으면 **Create agent** 버튼을 클릭합니다.
    3. DataSync agent를 실행할 EC2 인스턴스는 이미 **on-premises** 리전에 배포되었습니다.
-   4. 서비스 엔드포인트를 "**Public service endpoints**"로 둡니다.
-   5. **Activation key** 섹션 아래에 On-premises 리전에서 실행 중인 DataSync agent 인스턴스의 **Public IP address**를 입력합니다. On-premises 리전의 **CloudFormation Outputs**에서 이 IP 주소를 가져올 수 있습니다. 활성화를 위해 웹 브라우저에서 agent에 액세스할 수 있어야 하므로 여기에서 **Public IP** 주소를 사용합니다. 아래와 같이 agent의 IP address를 입력하고 **Get key**를 클릭합니다.
+   4. Deploy agent를 EC2 인스턴스로 선택해 주세요.
+   
+   ![2-1-1](../images/2-1-1.png)
+   
+   5. 서비스 엔드포인트를 "**Public service endpoints**"로 둡니다.
+   6. **Activation key** 섹션 아래에 On-premises 리전에서 실행 중인 DataSync agent 인스턴스의 **Public IP address**를 입력합니다. On-premises 리전의 **CloudFormation Outputs**에서 이 IP 주소를 가져올 수 있습니다. 활성화를 위해 웹 브라우저에서 agent에 액세스할 수 있어야 하므로 여기에서 **Public IP** 주소를 사용합니다. 아래와 같이 agent의 IP address를 입력하고 **Get key**를 클릭합니다.
    
    ![2-2](../images/2-2.png)
    
-   6. 활성화에 성공하면 활성화 키가 표시되고 추가 정보를 입력하라는 메시지가 표시됩니다.
+   7. 활성화에 성공하면 활성화 키가 표시되고 추가 정보를 입력하라는 메시지가 표시됩니다.
     
    ![2-3](../images/2-3.png)
     
-   7. 원하는 경우 agent 이름을 입력한 다음 **Create agent**를 클릭합니다.<br>
+   8. 원하는 경우 agent 이름을 입력한 다음 **Create agent**를 클릭합니다.<br>
 
 2. **Create NFS location**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations**를 클릭한 다음 **Create location**을 클릭합니다.
     2. On-premises NFS 서버의 위치를 생성합니다. 위치 유형 드롭다운에서 **Network File System**을 선택합니다.
     3. agent 드롭다운에서 이전 단계에서 생성한 DataSync agent를 선택합니다.
-    4. **On-premises 리전**의 CloudFormation Outputs에 따라 NFS 서버의 **Private IP address**를 입력합니다. 이것은 이전 모듈에서 Application 서버에 NFS 내보내기를 마운트하는 데 사용된 것과 동일한 IP 주소였습니다. DataSync agent가 NFS 내보내기를 마운트하는 데 사용할 IP address입니다.
+    4. CloudFormation Outputs에 따라 NFS 서버의 Private IP address를 입력합니다. 이것은 이전 모듈에서 Application 서버에 NFS를 마운트하는 데 사용한 것과 동일한 IP 주소입니다. DataSync agent가 NFS를 마운트하는 데 사용할 IP address입니다.
     
     ![2-4](../images/2-4.png)
     
