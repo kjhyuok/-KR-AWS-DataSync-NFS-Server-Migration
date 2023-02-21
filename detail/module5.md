@@ -10,15 +10,14 @@ S3 버킷에 모든 데이터가 있으므로 이제 NFS 서버를 종료하고 
 1. **Unmount the NFS server**
 Application 서버에서 CLI로 다음 명령을 실행하여 NFS 서버를 마운트 해제하십시오.
 ```
-$ sudo umount /mnt/data
+sudo umount /mnt/data
 ```
-2. **Clean up DataSync resources**<br>
-DataSync를 완료했으므로 계속해서 리소스를 정리할 수 있습니다.
-    1. IN-CLOUD 리전 AWS 관리 콘솔로 이동하여 **DataSync** 서비스로 이동합니다.
-    2. **Tasks**를 선택하고 이전에 생성한 task를 삭제합니다.
-    3. **Locations**을 선택하고 이전에 생성한 locations을 삭제합니다.
-    4. **Agents**를 선택하고 이전에 활성화한 agent를 삭제합니다. 실제 DataSync agent가 설치된 EC2 instance는 삭제되지 않습니다. CloudFormation 스택이 삭제되면 나중에 함께 삭제됩니다.
-    5. 자동 생성된 **CloudWatch log group**을 삭제합니다.
+Application 서버에서 CLI로 다음 명령을 실행하여 현재 마운트 상황을 확인해 봅니다.
+Storage Gateway로의 접근 경로만 노출 된 것을 확인 합니다.
+```
+findmnt
+```
+![5-1-1](../images/5-1-1.png)
 
 ### Validation Step
 Application 서버에서 CLI로 다음 명령을 실행하여 Storage Gateway를 통해 AWS S3 버킷에 또 다른 새로운 파일을 생성해 봅니다.
