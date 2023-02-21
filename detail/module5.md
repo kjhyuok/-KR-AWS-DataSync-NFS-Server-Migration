@@ -36,7 +36,9 @@ IN-CLOUD 리전 AWS 관리 콘솔로 돌아가서 AWS S3로 이동합니다. dat
 
 ![5-2](../images/5-2.png)
 
-Application 서버가 컷오버를 완료했습니다! 이제 Storage Gateway share를 사용하여 NFS 서버에 있던 모든 파일을 읽을 수 있습니다. 그리고 share에 기록된 모든 새로운 파일은 자동으로 S3 버킷에 업로드됩니다. 이제 NFS 서버를 종료하고 폐기할 수 있습니다!
+Application 서버가 컷오버를 완료 했습니다! 이제 Storage Gateway share를 사용하여 NFS 서버에 있던 모든 파일을 읽을 수 있습니다. 그리고 새로 마운트 된 /mnt/fgw/ 영역의 새로운 파일들은 자동으로 S3 버킷에 업로드됩니다. 이제 NFS 서버를 종료하고 폐기할 수 있습니다!
+
+![5-3](../images/5-3.png)
 
 Storage Gateway 사용의 이점 중 하나는 파일을 S3에 완전하고 전체적으로 액세스 가능한 객체로 저장한다는 것입니다. 이제 S3의 데이터로 Amazon Athena, Amazon SageMaker, Amazon EMR 및 기타 많은 AWS 서비스를 사용하여 데이터를 통한 훨씬 더 큰 가치와 통찰력을 얻을 수 있습니다.
 
