@@ -15,7 +15,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 몇 가지의 조사를 해본 결과 [AWS DataSync](https://aws.amazon.com/ko/datasync/)를 사용하여 온프레미스 NFS 서버에서 Amazon S3로 데이터를 마이그레이션할 수 있다는 것을 알게되었습니다. 데이터가 S3에 있을 때 [AWS Storage gateway](https://aws.amazon.com/ko/storagegateway/)를 사용하여 온프레미스에서 NFS 액세스를 제공할 수 있습니다.\
 \
 이 워크샵에서는 **CloudFormation** 템플릿을 사용하여 리소스를 자동 배포하고 AWS 관리 콘솔을 사용하여 리소스를 적절하게 구성하는 방법을 설명합니다.\
-아래 아키텍처 다이어그램에 표시된 것처럼 NFS 서버, 애플리케이션 서버, DataSync 에이전트 및 File Gateway 를 AWS 리전에 배포하고 On-Premise 환경을 시뮬레이션합니다. NFS 서버의 데이터가 마이그레이션될 AWS 클라우드 영역을 시뮬레이션하는 S3 버킷이 AWS 환경(이하 _IN-CLOUD 리전_)에 생성됩니다.\
+아래 아키텍처 다이어그램에 표시된 것처럼 NFS 서버, 애플리케이션 서버, DataSync 에이전트 및 File Gateway 를 AWS 환경에 배포하고 On-Premise 환경을 시뮬레이션합니다. NFS 서버의 데이터가 마이그레이션될 AWS 클라우드 영역을 시뮬레이션하는 S3 버킷이 AWS 환경에 생성됩니다.
 
 
 ![intro](<images/3-1 (4).png>)
@@ -26,7 +26,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 * DataSync를 사용하여 NFS 파일을 S3으로 마이그레이션
 * NFS를 사용하여 사내에서 S3 호스팅된 파일을 처리하도록 Storage Gateway 구성
 * DataSync를 통한 증분 복사
-* NFS 서버 해체 및 Storage Gateway로의 컷오버
+* NFS 서버 unmount 및 Storage Gateway로의 컷오버
 
 ### 전제조건
 
