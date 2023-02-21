@@ -18,6 +18,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
    5. **Launch EC2 instance** 항목을 Customize your setting으로 지정 후 **Confirm set up gateway**에 체크하고 Next 클릭 합니다.
 
    ![3-1-1](../images/3-1-1.png)
+   
    ![3-1-2](../images/3-1-2.png)
 
    6. 앞서 Module1과정에서 CloudFormation을 사용해서 생성된 File Gateway instance(EC2명: fileGateway)의 **Public IP address**를 입력하고, 
