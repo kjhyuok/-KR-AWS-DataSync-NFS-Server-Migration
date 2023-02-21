@@ -99,7 +99,7 @@ IN-CLOUD 지역 관리 콘솔에서 **Services**를 선택한 다음 **S3**를 �
 ![2-13](../images/2-13.png)
 
 ### Module2 Summary
-이 모듈에서는 DataSync agent를 성공적으로 활성화하고 On-premises NFS 서버에서 AWS의 S3 버킷으로 파일을 복사하는 작업을 생성하고 그 파일이 성공적으로 복사되었는지 확인했습니다.
+이 모듈에서는 DataSync agent를 성공적으로 활성화하고 On-premises NFS 서버에서 AWS의 S3 버킷으로 파일을 복사하는 작업을 생성하고 그 파일이 성공적으로 복사되었는지 확인했습니다.<br>
 
 ![2-14](../images/2-14.png)
 
