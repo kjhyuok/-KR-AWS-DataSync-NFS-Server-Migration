@@ -74,8 +74,8 @@ Application 서버용 CLI에서 다음 명령을 실행하여 NFS export를 마�
 앞서 실행했었던 On-premises CloudFormation 스택 **Outputs**의 *nfsServerPrivateIP* 값을 사용합니다.
 
 ```
-$ sudo mount -t nfs <nfs-server-ip-address>:/media/data /mnt/data
-$ ls /mnt/data/images
+sudo mount -t nfs <nfs-server-ip-address>:/media/data /mnt/data
+ls /mnt/data/images
  ```
 /mnt/data/images 폴더에서 아래와 같이 200개의 이미지 파일을 볼 수 있는데 이런 이미지 파일은 AWS IN-CLOUD 리전의 S3 버킷으로 마이그레이션될 현재 On-premises의 NFS 서버내 데이터를 나타냅니다.
 
