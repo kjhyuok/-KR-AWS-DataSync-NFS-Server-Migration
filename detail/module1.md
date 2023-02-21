@@ -59,11 +59,11 @@ IN-CLOUD 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **O
     1. On-premises 리전의 AWS 콘솔에서 서비스를 클릭하고 **EC2**를 선택하고
     2. 왼쪽 메뉴에서 **Instance**를 선택합니다.
     3. Application Server 인스턴스를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 **Connect**을 선택합니다.
-On-premises CloudFormation 템플릿을 배포할 때 EC2 Key Pair을 구성한 경우 컴퓨터에서 SSH 클라이언트를 사용하여 연결할 수 있습니다.
+On-premises CloudFormation 템플릿을 배포할 때 EC2 Key Pair을 구성한 경우 컴퓨터에서 SSH 클라이언트를 사용하여 연결할 수도 있습니다.
 
 ![1-4](../images/1-4.png)
 
-그렇지 않으면 **EC2 Instance Connect** 또는 **Session Manager**를 사용하여 브라우저를 통해 직접 인스턴스에 연결할 수 있습니다.
+하지만 우리는 실습을 위해 **EC2 Instance Connect** 를 사용하여 브라우저를 통해 직접 인스턴스에 연결해 보겠습니다.
 
 ![1-5](../images/1-5.png)
 
