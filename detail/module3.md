@@ -11,7 +11,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
 1. **Activate the Storage Gateway**<br>
 바로 전 Module2에서 DataSync agent를 활성화한 것처럼 Storage Gateway에 대해 비슷한 단계를 수행하여 IN-CLOUD 리전에서 활성화해야 합니다. 아래 단계를 따라서 진행합니다.
 
-   1. IN-CLOUD 리전의 AWS Management 콘솔 페이지로 이동하고 **Services**를 클릭한 다음 **Storage Gateway**를 선택합니다.
+   1. AWS Management 콘솔 페이지로 이동하고 **Services**를 클릭한 다음 **Storage Gateway**를 선택합니다.
    2. Gateway가 없으면 **Get started** 버튼을 클릭하고 그렇지 않으면 **Create gateway** 버튼을 클릭합니다.
    3. Gateway 이름을 "*DataMigrationGateway*"로 지정하고 **Amazon S3 File Gateway** 유형을 선택합니다.
    4. 호스트 플랫폼으로 **Amazon EC2**를 선택하고 게이트웨이 설정 확인을 선택한 후 **Next**를 클릭합니다.
