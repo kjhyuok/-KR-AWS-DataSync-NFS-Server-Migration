@@ -10,7 +10,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 실습을 위한 �
 👉🏻_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다._
 
 1. **On-premises에 대한 AWS 리소스 배포**\
-   a. 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. On-premises 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.\
+   a. 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. On-premises 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.
 
 
 | Region Code | Region Name          | Launch                                                                                                                                                                                                                                                                                                |
@@ -27,7 +27,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 실습을 위한 �
 자\~ 이제 On-premises를 자동으로 생성해 줄 이 CloudFormation 배포가 진행되는 동안 CLOUD 에 필요한 리소스를 또 다른 CloudFormation으로 동시에 배포를 진행해 보시죠.
 
 2. **CLOUD환경에 대한 AWS 리소스 배포**\
-   a. 역시 실습 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. CLOUD환경을 만들어줄 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.\
+   a. 역시 실습 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. CLOUD환경을 만들어줄 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.
 
 
 | Region Code | Region Name          | Launch                                                                                                                                                                                                                                                                                     |
@@ -43,7 +43,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 실습을 위한 �
 
 3. **Stack Outputs**\
    완료되면 각 CloudFormation 스택에 "**Outputs**" 목록이 표시됩니다. IP Address 및 Resource Name과 같은 values는 이 실습 전체에서 사용되니 가급적 이런 Outputs values를 다른 곳에 복사하시고 실습을 진행하면서 활용하시면 좀 더 원활한 진행이 가능 합니다.\
-   On-premises 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **Outputs** 탭을 클릭합니다.\
+   CloudFormation 페이지에서 아래 이미지와 같이 **Outputs** 탭을 클릭합니다.\
    다음과 같은 _**4가지 값**_이 표시됩니다:
 
 * **appServerPrivateIP** – Application 서버의 private IP 주소입니다. Storage gateway의 파일 공유를 생성할 때 Storage Gateway에 대한 엑세스를 NFS서버로 제한하기 위해 이 옵션을 사용합니다.
@@ -71,7 +71,7 @@ EC2 Instance Connect를 선택하고 **Connect**를 클릭해주세요. 잠시 �
 
 ### Validation Step
 
-Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버를 마운트하고 NFS에 저장되어 있는 파일들을 확인하세요.\
+Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버를 마운트하고 NFS 에 저장되어 있는 파일들을 확인하세요.\
 앞서 실행했었던 On-premises CloudFormation 스택 **Outputs**의 _nfsServerPrivateIP_ 값을 사용합니다.
 
 ```
@@ -79,7 +79,7 @@ sudo mount -t nfs <nfs-server-ip-address>:/media/data /mnt/data
 ls /mnt/data/images
 ```
 
-/mnt/data/images 폴더에서 아래와 같이 200개의 이미지 파일을 볼 수 있는데 이런 이미지 파일은 AWS IN-CLOUD 리전의 S3 버킷으로 마이그레이션될 현재 On-premises의 NFS 서버내 데이터를 나타냅니다.
+/mnt/data/images 폴더에서 아래와 같이 200개의 이미지 파일을 볼 수 있는데 이런 이미지 파일은 AWS S3 버킷으로 마이그레이션 될 현재 On-premises의 NFS 서버내 데이터를 나타냅니다.
 
 ![1-6](../images/1-6.png)
 
@@ -93,7 +93,7 @@ findmnt
 
 ### Module1 Summary
 
-Module1 에서는 On-premises 리전 및 IN-CLOUD 리전 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다. 그리고 Application 서버에 NFS export를 마운트하고 약 200여개의 jpg 데이터 세트를 확인했는데요?
+Module1 에서는 On-premises 및 IN-CLOUD 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다. 그리고 Application 서버에 NFS 서버를 마운트하고 약 200여개의 jpg 데이터 세트를 확인했는데요?
 
 ![1-9](../images/1-9.png)
 
