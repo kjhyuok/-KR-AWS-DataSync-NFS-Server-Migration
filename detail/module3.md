@@ -7,7 +7,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
 
 ### Module Steps
 
-👉🏻_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다._
+👉🏻_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.
 
 1.  **Activate the Storage Gateway**\
     바로 전 Module2에서 DataSync agent를 활성화한 것처럼 Storage Gateway에 대해 비슷한 단계를 수행하여 IN-CLOUD 리전에서 활성화해야 합니다. 아래 단계를 따라서 진행합니다.
