@@ -38,7 +38,7 @@ S3 버킷에 새 파일이 있으면 Application 서버의 Storage Gateway share
 ls /mnt/data
 ls /mnt/fgw
 ```
-![4-6](../images/4-6.png)
+![4-6](../images/4-6-1.png)
 
 자.. 우리는 DataSync를 사용하여 NFS 서버에서 S3로 파일을 복사했고 Storage Gateway는 S3 버킷에 연결되어 있습니다. 그런데? Application 서버의 Storage Gateway 공유에서 파일을 볼 수 없는 이유는 무엇입니까?
 
@@ -48,7 +48,7 @@ AWS 관리 콘솔로 이동하여 **Storage Gateway** 서비스로 이동합니�
 
 Application 서버용 CLI로 돌아가서 "ls /mnt/fgw" 명령을 반복해 보면 아마도 이제 새 파일이 표시될 것 입니다.
 
-![4-7](../images/4-7.png)
+![4-7](../images/4-7-1.png)
 
 ### Module4 Summary
 
