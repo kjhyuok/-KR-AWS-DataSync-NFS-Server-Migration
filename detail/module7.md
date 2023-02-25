@@ -33,8 +33,8 @@ sudo umount /mnt/fgw
 ```
 
 2. CLI를 실행하는 브라우저 창을 닫습니다.
-3. **Storage Gateway** 페이지로 이동하여 Storage Gateway **NFS file share**를 삭제합니다.
-4. _DataMigrationGateway_라는 이름의 **Storage Gateway**를 삭제합니다. 게이트웨이 EC2 인스턴스는 삭제되지 않습니다. 마지막 단계에서 환경을 만들때 자동생성한 CloudFormation stack이 삭제되면 인스턴스가 자동으로 삭제됩니다.
+3. **Storage Gateway** 페이지로 이동하여 Storage Gateway [**NFS file share**](https://us-east-1.console.aws.amazon.com/storagegateway/home?region=us-east-1#/file-shares)를 삭제합니다.
+4. _DataMigrationGateway_라는 이름의 [**Storage Gateway**](https://us-east-1.console.aws.amazon.com/storagegateway/home?region=us-east-1#/gateways)를 삭제합니다. 게이트웨이 EC2 인스턴스는 삭제되지 않습니다. 마지막 단계에서 환경을 만들때 자동생성한 CloudFormation stack이 삭제되면 인스턴스가 자동으로 삭제됩니다.
 
 **CloudFormation을 통해 전체 리소스 삭제**
 
