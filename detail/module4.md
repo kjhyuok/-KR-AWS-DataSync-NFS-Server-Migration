@@ -20,7 +20,7 @@ sudo cp /mnt/data/images/00001.jpg /mnt/data/new-image.jpg
     NFS 서버에서 S3 버킷으로 파일을 복사하는 DataSync 작업을 이미 생성했습니다. 새 파일을 복사하려면 작업을 다시 실행하면 됩니다. DataSync는 소스와 대상 간에 변경된 파일만 복사합니다.
 
     1. AWS 관리 콘솔로 돌아가서 **DataSync** 서비스로 이동합니다.
-    2. 이전에 생성한 작업을 선택하고 **Start** 버튼과 **Start with defaults**을 클릭합니다.
+    2. Tasks 메뉴로 이동하여, 이전에 생성된 task 작업에 대한 링크를 눌러 상세 페이지로 이동합니다. **Start with defaults**을 클릭합니다.
     3. 기록 탭으로 이동하고 목록에서 최신 작업 실행을 선택합니다.
 
     ![4-2](../images/4-2.png)
@@ -48,7 +48,7 @@ ls /mnt/fgw
 
 이 경우 파일은 Storage Gateway 공유 자체를 통하지 않고 DataSync를 통해 S3 버킷에 기록되었습니다. Storage Gateway는 버킷에 새 객체가 있다는 것을 인식하지 못합니다. Application 서버에서 새 파일을 보려면 Storage Gateway에서 메타데이터 캐시를 새로 고쳐야 합니다.
 
-AWS 관리 콘솔로 이동하여 **Storage Gateway** 서비스로 이동합니다. 페이지 왼쪽에서 **File shares**를 클릭하고 목록에서 NFS share를 선택합니다. **Actions** 버튼을 클릭하고 **Refresh cache**을 선택한 다음 **Start**를 클릭합니다.
+AWS 관리 콘솔로 이동하여 **Storage Gateway** 서비스로 이동합니다. 페이지 왼쪽에서 **File shares**를 클릭하고 목록에서 share-xx를 선택합니다. **Actions** 버튼을 클릭하고 **Refresh cache**을 선택한 다음 **Start**를 클릭합니다.
 
 Application 서버용 CLI로 돌아가서 "ls /mnt/fgw" 명령을 반복해 보면 아마도 이제 새 파일이 표시될 것 입니다.
 
