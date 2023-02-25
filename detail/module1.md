@@ -76,7 +76,7 @@ EC2 Instance Connect를 선택하고 **Connect**를 클릭해주세요. 잠시 �
 ### Validation Step
 
 Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버를 마운트하고 NFS 에 저장되어 있는 파일들을 확인하세요.\
-앞서 실행했었던 On-premises CloudFormation 스택 **Outputs**의 **nfsServerPrivateIP** 값을 사용합니다.<br>
+앞서 실행했었던 On-premises CloudFormation 스택 **Outputs**의 **nfsServerPrivateIP** 값을 copy해서 아래에 예시처럼 붙여 넣습니다.<br>
 ex> sudo mount -t nfs **10.11.12.92**:/media/data 
 
 ```
