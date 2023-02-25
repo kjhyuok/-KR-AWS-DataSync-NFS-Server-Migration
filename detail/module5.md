@@ -23,12 +23,13 @@ findmnt
 
 ![5-1-1](../images/5-1-1.png)
 
-2. **Clean up DataSync resources** DataSync를 완료했으므로 계속해서 리소스를 정리할 수 있습니다.
+2. **Clean up DataSync resources**<br>
+   본 실습에서 DataSync를 사용한 작업을 완료했으므로 먼저 리소스를 정리해 봅시다.
    1. AWS 관리 콘솔로 이동하여 DataSync 서비스로 이동합니다.
    2. Tasks를 선택하고 이전에 생성한 task를 삭제합니다.
    3. Locations을 선택하고 이전에 생성한 locations을 삭제합니다.
    4. Agents를 선택하고 이전에 활성화한 agent를 삭제합니다. 실제 DataSync agent가 설치된 EC2 instance는 삭제되지 않습니다. CloudFormation 스택이 삭제되면 나중에 함께 삭제됩니다.
-   5. 자동 생성된 CloudWatch log group을 삭제합니다.
+   5. 자동 생성된 [CloudWatch log groups](https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups)을 삭제합니다.
 
 ### Validation Step
 
