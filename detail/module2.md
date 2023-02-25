@@ -52,7 +52,7 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations** 클릭한 다음 **Create location**을 클릭합니다.
     2. S3 버킷의 location을 생성합니다. location 유형 드롭다운에서 **Amazon S3 bucket**을 선택합니다.
-    3. S3 버킷 드롭다운에서 **data-migration-workshop**으로 시작하 S3 버킷을 선택합니다.
+    3. S3 버킷 드롭다운에서 **data-migration-workshop**으로 시작하는 S3 버킷을 선택합니다.
     4. S3 스토리지 클래스를 **Standard**로 유지하시고
     5. 폴더 아래에 "/"를 입력합니다. 이렇게 하면 모든 파일이 버킷의 최상위 수준으로 복사됩니다.
     6. IAM roles에서 **DataMigrationWorkshop-inCloud**로 시작하는 S3 버킷 IAM roles을 선택합니다. roles의 전체 이름은 클라우드 내 CloudFormation 스택의 Outputs에서 찾을 수 있습니다.
