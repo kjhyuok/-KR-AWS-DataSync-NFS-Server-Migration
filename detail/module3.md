@@ -13,7 +13,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
     바로 전 Module2에서 DataSync agent를 활성화한 것처럼 Storage Gateway에 대해 비슷한 단계를 수행하여 활성화해야 합니다. 아래 단계를 따라서 진행합니다.
 
     1. AWS Management 콘솔 페이지로 이동하고 **Services**를 클릭한 다음 **Storage Gateway**를 선택합니다.
-    2. Gateway가 없으면 **Get started** 버튼을 클릭하고 그렇지 않으면 **Create gateway** 버튼을 클릭합니다.
+    2. Gateway 생성을 위해 **Create gateway** 버튼을 클릭합니다.(기존 생성된 Gateway가 있다면, **Get started**)
     3. Gateway 이름을 "*DataMigrationGateway*"로 지정하고 **Amazon S3 File Gateway** 유형을 선택합니다.
     4. 호스트 플랫폼으로 **Amazon EC2**를 선택하고 게이트웨이 설정 확인을 선택한 후 **Next**를 클릭합니다.
     5. **Launch EC2 instance** 항목을 Customize your setting으로 지정 후 **Confirm set up gateway**에 체크하고 Next 클릭 합니다.
@@ -22,7 +22,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
 
     ![3-1-2](../images/3-1-2.png)
 
-    6. 앞서 Module1과정에서 CloudFormation을 사용해서 생성된 File Gateway instance(EC2명: fileGateway)의 **Public IP address**를 입력하고,
+    6. 앞서 Module1과정에서 CloudFormation을 사용해서 생성된 File Gateway instance(EC2명: fileGateway)의 **fileGatewayPublicIP**를 입력하고,
     7. **Publicly accessible** endpoint 유형을 선택한 뒤 **Next**를 클릭합니다.
 
     ![3-1-3](../images/3-1-3.png)
@@ -43,23 +43,23 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
 
     ![3-2-1](../images/3-2-1.png)
 
-    7. **Automated cache refresh from S3**을 None으로 설정하고 **Next** 클릭 합니다.
-    8. **S3 prefix name**은 비워 둡니다.
-    9. Click **Next**.
+    6. **Automated cache refresh from S3**을 None으로 설정하고 **Next** 클릭 합니다.
+    7. **S3 prefix name**은 비워 둡니다.
+    8. Click **Next**.
 
     ![3-2-2](../images/3-2-3.png)
 
-    11. default S3 스토리지 설정을 유지한 후 **Next**를 클릭합니다.
-    12. **Access object** 섹션에서 **Add client**를 클릭하고, Application 서버의 **Private IP Address**를 추가한 후 "/32"를 추가합니다. 이렇게 하면 Application 서버만 게이트웨이의 NFS 파일 공유에 액세스할 수 있습니다.
+    9. default S3 스토리지 설정을 유지한 후 **Next**를 클릭합니다.
+    10. **Access object** 섹션에서 **Add client**를 클릭하고, Application 서버의 **Private IP Address**를 추가한 후 "/32"를 추가합니다. 이렇게 하면 Application 서버만 게이트웨이의 NFS 파일 공유에 액세스할 수 있습니다.
 
     ![3-3](../images/3-3.png)
 
-    8. **Mount options** 섹션에서 **Squash level**을 "_No root squash_"으로 변경합니다.
-    9. Click **Next**.
-    10. file share 설정을 검토하고 **Create**를 클릭합니다.
-    11. new file share를 선택하고 mount 지침을 확인합니다.
+    11. **Mount options** 섹션에서 **Squash level**을 "_No root squash_"으로 변경합니다.
+    12. Click **Next**.
+    13. file share 설정을 검토하고 **Create**를 클릭합니다.
+    14. share-xx를 선택하고 mount 지침을 확인합니다.
 
-    ![3-4](../images/3-4.png)
+    ![3-4-1](../images/3-4-1.png)
 3.  **Application 서버에 NFS share Mount**
 
     1. Application 서버에 대한 CLI로 돌아가서 아래 명령을 실행하여 Storage Gateway 공유에 대한 새 Mount 지점을 생성합니다.
