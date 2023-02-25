@@ -7,7 +7,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 실습을 위한 �
 
 ### Module Steps
 
-👉🏻_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다._
+👉🏻Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.
 
 1. **On-premises에 대한 AWS 리소스 배포**\
    a. 환경을 자동으로 배포하기 위해서 CloudFormation을 사용합니다. On-premises 리소스를 배포하려면 아래 표의 us-east-1: US East(N. Virginia)를 선택해주세요.
@@ -22,6 +22,8 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 실습을 위한 �
 3. Next 클릭
 4. Next을 다시 클릭(옵션 및 고급 옵션 섹션 건너뛰기)
 5. review 페이지에서 아래로 스크롤하여 CloudFormation이 IAM 리소스를 생성함을 확인하는 확인란을 선택한 다음 스택 생성을 클릭합니다.
+
+![1-1-1](../images/1-1-1.png)
 
 참고: 이 CloudFormation 템플릿의 일부로 시작된 인스턴스는 몇 분 동안 초기화 중 상태일 수 있습니다.\
 자\~ 이제 On-premises를 자동으로 생성해 줄 이 CloudFormation 배포가 진행되는 동안 CLOUD 에 필요한 리소스를 또 다른 CloudFormation으로 동시에 배포를 진행해 보시죠.
@@ -39,12 +41,14 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 실습을 위한 �
 3. Next을 다시 클릭(옵션 및 고급 옵션 섹션 건너뛰기)
 4. review 페이지에서 아래로 스크롤하여 CloudFormation이 IAM 리소스를 생성함을 확인하는 확인란을 선택한 다음 스택 생성을 클릭합니다.
 
-참고: 다음 단계를 진행하기 전에 각 리전의 CloudFormation 스택이 CREATE\_COMPLETE 상태에 도달할 때까지 기다리십시오. 우리가 지금 실행 한 위의 2개 CloudFormation 스택이 완료되는 데 약 _**10분**_이 소요됩니다.
+![1-1-1](../images/1-1-1.png)
+
+참고: 다음 단계를 진행하기 전에 각 리전의 CloudFormation 스택이 CREATE\_COMPLETE 상태에 도달할 때까지 기다리십시오. 우리가 지금 실행 한 위의 2개 CloudFormation 스택이 완료되는 데 약 **10분**이 소요됩니다.
 
 3. **Stack Outputs**\
    완료되면 각 CloudFormation 스택에 "**Outputs**" 목록이 표시됩니다. IP Address 및 Resource Name과 같은 values는 이 실습 전체에서 사용되니 가급적 이런 Outputs values를 다른 곳에 복사하시고 실습을 진행하면서 활용하시면 좀 더 원활한 진행이 가능 합니다.\
    CloudFormation 페이지에서 아래 이미지와 같이 **Outputs** 탭을 클릭합니다.\
-   다음과 같은 _**4가지 값**_이 표시됩니다:
+   On-premises 환경을 만들어주는 다음과 같은 **4가지 값**이 표시됩니다:
 
 * **appServerPrivateIP** – Application 서버의 private IP 주소입니다. Storage gateway의 파일 공유를 생성할 때 Storage Gateway에 대한 엑세스를 NFS서버로 제한하기 위해 이 옵션을 사용합니다.
 * **dataSyncAgentPublicIP** – DataSync agent를 실행하는 EC2 인스턴스의 public IP 주소입니다. DataSync agent를 활성화할 때 사용합니다.
@@ -53,7 +57,7 @@ Module 1에서는 CloudFormation 스크립트를 사용하여 실습을 위한 �
 
 ![1-2](../images/1-2.png)
 
-IN-CLOUD 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **Outputs** 탭을 클릭하면 아래 그림과 같이 bucket관련 나열된 두 값(name/role)이 표시되어야 합니다.
+IN-CLOUD 환경의 CloudFormation 페이지에서 아래 이미지와 같이 **Outputs** 탭을 클릭하면 아래 그림과 같이 bucket관련 나열된 두 값(name/role)이 표시되어야 합니다.
 
 * **bucketName** – 데이터가 복사될 S3 버킷의 이름입니다. Storage Gateway에서 file share를 생성할 때 이것을 사용합니다.
 * **bucketRoleForDataSync** – DataSync agent가 S3 버킷에 파일을 쓰기 위해 사용하는 role입니다. DataSync에 대한 S3 location를 생성할 때 이것을 사용합니다.
@@ -63,7 +67,7 @@ IN-CLOUD 리전의 CloudFormation 페이지에서 아래 이미지와 같이 **O
 4. **Application server에 연결하기**
    1. AWS 콘솔에서 서비스를 클릭하고 **EC2**를 선택합니다.
    2. 왼쪽 메뉴에서 **Instance**를 선택합니다.
-   3. Application Server 인스턴스를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 **Connect**을 선택합니다. **EC2 Instance Connect** 를 사용하여 브라우저를 통해 직접 인스턴스에 연결해 보겠습니다.
+   3. **Application Server** 인스턴스를 마우스 오른쪽 버튼으로 클릭하고 메뉴에서 **Connect**을 선택합니다. **EC2 Instance Connect** 를 사용하여 브라우저를 통해 직접 인스턴스에 연결해 보겠습니다.
 
 ![1-5](../images/1-5.png)
 
@@ -72,7 +76,8 @@ EC2 Instance Connect를 선택하고 **Connect**를 클릭해주세요. 잠시 �
 ### Validation Step
 
 Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버를 마운트하고 NFS 에 저장되어 있는 파일들을 확인하세요.\
-앞서 실행했었던 On-premises CloudFormation 스택 **Outputs**의 _nfsServerPrivateIP_ 값을 사용합니다.
+앞서 실행했었던 On-premises CloudFormation 스택 **Outputs**의 **nfsServerPrivateIP** 값을 사용합니다.<br>
+ex> sudo mount -t nfs **10.11.12.92**:/media/data 
 
 ```
 sudo mount -t nfs <nfs-server-ip-address>:/media/data /mnt/data
@@ -93,7 +98,7 @@ findmnt
 
 ### Module1 Summary
 
-Module1 에서는 On-premises 및 IN-CLOUD 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다. 그리고 Application 서버에 NFS 서버를 마운트하고 약 200여개의 jpg 데이터 세트를 확인했는데요?
+Module1 에서는 On-premises 및 IN-CLOUD 양쪽에 오늘 실습을 완료하는 데 필요한 모든 AWS의 리소스를 Cloudformation을 통해 배포했습니다. 그리고 Application 서버에 NFS 서버를 마운트하고 약 200여개의 jpg 데이터 세트를 확인해 봤습니다.
 
 ![1-9](../images/1-9.png)
 
