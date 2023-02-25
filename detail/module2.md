@@ -14,8 +14,8 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
     Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 리전에서 활성화해야 합니다. Agent를 활성화하려면 아래 단계를 따르세요.
 
     1. AWS Management 콘솔 페이지로 이동하고 **Services**를 클릭한 다음 **DataSync**를 선택합니다.
-    2. DataSync agent가 없으면 **Get started** 버튼을 클릭하고 그렇지 않으면 **Create agent** 버튼을 클릭합니다.
-    3. DataSync agent를 실행할 EC2 인스턴스는 이미 **on-premises** 리전에 배포되었습니다.
+    2. DataSync agent 생성을 위해 **Create agent** 버튼을 클릭합니다.(기존 생성된 agent가 있다면, **Get started**) 
+    3. DataSync agent를 실행할 EC2 인스턴스는 이미 **on-premises**를 시뮬레이션 하는 환경에 배포되었습니다.
     4. Deploy agent를 EC2 인스턴스로 선택해 주세요.
 
     ![2-1-1](../images/2-1-1.png)
@@ -34,9 +34,9 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
 2.  **Create NFS location**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations**를 클릭한 다음 **Create location**을 클릭합니다.
-    2. On-premises NFS 서버의 위치를 생성합니다. 위치 유형 드롭다운에서 **Network File System**을 선택합니다.
+    2. On-premises NFS 서버의 location을 생성합니다. 위치 유형 드롭다운에서 **Network File System**을 선택합니다.
     3. agent 드롭다운에서 이전 단계에서 생성한 DataSync agent를 선택합니다.
-    4. CloudFormation Outputs에 따라 NFS 서버의 Private IP address를 입력합니다. 이것은 이전 모듈에서 Application 서버에 NFS를 마운트하는 데 사용한 것과 동일한 IP 주소입니다. DataSync agent가 NFS를 마운트하는 데 사용할 IP address입니다.
+    4. CloudFormation Outputs에서 따로 복사해 둔 NFS 서버의 **nfsServerPrivateIP**를 입력합니다. 이것은 이전 모듈에서 Application 서버에 NFS를 마운트하는 데 사용한 것과 동일한 IP 주소입니다. DataSync agent가 NFS를 마운트하는 데 사용할 IP address입니다.
 
     ![2-4](../images/2-4.png)
 
@@ -52,7 +52,7 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations** 클릭한 다음 **Create location**을 클릭합니다.
     2. S3 버킷의 location을 생성합니다. location 유형 드롭다운에서 **Amazon S3 bucket**을 선택합니다.
-    3. S3 버킷 드롭다운에서 **data-migration-workshop**으로 시작하고 뒤에 긴 GUID가 오는 S3 버킷을 선택합니다.
+    3. S3 버킷 드롭다운에서 **data-migration-workshop**으로 시작하 S3 버킷을 선택합니다.
     4. S3 스토리지 클래스를 **Standard**로 유지하시고
     5. 폴더 아래에 "/"를 입력합니다. 이렇게 하면 모든 파일이 버킷의 최상위 수준으로 복사됩니다.
     6. IAM roles에서 **DataMigrationWorkshop-inCloud**로 시작하는 S3 버킷 IAM roles을 선택합니다. roles의 전체 이름은 클라우드 내 CloudFormation 스택의 Outputs에서 찾을 수 있습니다.
@@ -102,7 +102,7 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
 
 ### Validation Step
 
-IN-CLOUD 지역 관리 콘솔에서 **Services**를 선택한 다음 **S3**를 선택하고 버킷 목록에서 **data-migration-workshop** 버킷을 클릭합니다. 그 안에는 "_images_"라는 최상위 폴더가 표시되는데 이 폴더 안에는 NFS 서버의 .jpg 파일 200개가 있어야 합니다.
+AWS 콘솔에서 **S3**를 선택하고 버킷 목록에서 **data-migration-workshop** 버킷을 클릭합니다. 그 안에는 "*images*"라는 최상위 폴더가 표시되는데 이 폴더 안에는 NFS 서버의 .jpg 파일 200개가 있어야 합니다.
 
 ![2-13](../images/2-13.png)
 
