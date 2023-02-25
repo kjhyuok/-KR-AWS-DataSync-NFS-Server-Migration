@@ -59,7 +59,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
     13. file share 설정을 검토하고 **Create**를 클릭합니다.
     14. share-xx를 선택하고 mount 지침을 확인합니다.
 
-    ![3-4-1](../images/3-4-1.png)
+    ![3-4-1-1](../images/3-4-1-1.png)
 3.  **Application 서버에 NFS share Mount**
 
     1. Application 서버에 대한 CLI로 돌아가서 아래 명령을 실행하여 Storage Gateway 공유에 대한 새 Mount 지점을 생성합니다.
