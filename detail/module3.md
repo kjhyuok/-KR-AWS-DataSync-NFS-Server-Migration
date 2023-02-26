@@ -52,7 +52,7 @@ Application 서버에서 **Storage Gateway** share를 마운트하여 파일에 
     9. default S3 스토리지 설정을 유지한 후 **Next**를 클릭합니다.
     10. **Access object** 섹션에서 **Add client**를 클릭하고, Application 서버의 **Private IP Address**를 추가한 후 "/32"를 추가합니다. 이렇게 하면 Application 서버만 게이트웨이의 NFS 파일 공유에 액세스할 수 있습니다.
 
-    ![3-3](../images/3-3.png)
+    ![3-3-1](../images/3-3-1.png)
 
     11. **Mount options** 섹션에서 **Squash level**을 "_No root squash_"으로 변경합니다.
     12. Click **Next**.
