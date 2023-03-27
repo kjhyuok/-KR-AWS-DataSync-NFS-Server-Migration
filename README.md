@@ -3,7 +3,7 @@
 **AWS Builders Online 2023** 스토리지 학습에 오신 여러분들을 환영합니다.😃\
 AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단순화, 자동화 및 가속화하는 AWS 온라인 데이터 전송 서비스인 **AWS Datasync**를 사용해 온프레미스에 위치한 NFS 서버를 AWS S3로 마이그레이션 하고, 온프레미스에 있는 Application 서버가 사용하던 NFS를 **AWS File Gateway**를 통해 S3로 대체해 보는 워크샵(실습)을 진행해 볼 예정입니다.\
 기존 AWS의 Workshop인 [**AWS DataSync: NFS Server Migration**](https://catalog.workshops.aws/datasync-nfs-server-migration-with-storage-gateway/en-US)을 한글화 하고, 실습자에게 필요한 부분을 재구성 했습니다.\
-본 Workshop은 약 1\~1.5시간 정도 소요되며, 활용되는 AWS Resource 목록은 다음과 같습니다.
+본 Workshop은 약 1.5~2시간 정도 소요되며, 활용되는 AWS Resource 목록은 다음과 같습니다.
 
 * [AWS Datasync](https://aws.amazon.com/ko/datasync/), [Amazon S3](https://aws.amazon.com/ko/s3/), [AWS Storage gateway](https://aws.amazon.com/ko/storagegateway/) 그리고 코드기반으로 실습환경을 자동으로 프로비저닝해 줄 [AWS CloudFormation](https://aws.amazon.com/ko/cloudformation/)이 활용됩니다.
 
@@ -44,7 +44,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 
 ### Workshop 모듈 및 소개
 
-이 워크샵은 다음 6개의 모듈로 구성되고 사전 Preparations 단계를 통해서 AWS Console 사용을 위한 기본적인 설정을 진행 합니다.
+이 워크샵은 다음 7개의 모듈로 구성되고 사전 Preparations 단계를 통해서 AWS Console 사용을 위한 기본적인 설정을 진행 합니다.
 
 * [Preparations](detail/Preparations.md) - 실습 사전 준비
 * [Module1](detail/module1.md) - 실습용 AWS Resource 배포(가상의 On-premises와 클라우드 인프라 구성)하기
@@ -55,6 +55,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 * [Module6](detail/module6/s3-1.md) - 이제 Amazon S3를 더 똑똑한 스토리지로 활용하기 위한 작업
 * [Module7](detail/module7.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
 
+* [실습가이드 다운로드](https://github.com/kjhyuok/KR-AWS-DataSync-NFS-Server-Migration/blob/main/images/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8-AWS-Builders-Korea-Program-Storage-20230322.pdf)
 * [Contact Me](detail/Contactme.md)
 
 
