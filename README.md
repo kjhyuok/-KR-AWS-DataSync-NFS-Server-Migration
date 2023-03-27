@@ -55,7 +55,7 @@ AWS의 스토리지 시스템과 기존 서비스 간의 데이터 이동을 단
 * [Module6](detail/module6/s3-1.md) - 이제 Amazon S3를 더 똑똑한 스토리지로 활용하기 위한 작업
 * [Module7](detail/module7.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
 
-* [실습가이드 다운로드](https://github.com/kjhyuok/KR-AWS-DataSync-NFS-Server-Migration/blob/main/images/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8-AWS-Builders-Korea-Program-Storage-20230322.pdf)
+* [실습가이드 다운로드]([https://github.com/kjhyuok/KR-AWS-DataSync-NFS-Server-Migration/blob/main/images/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8-AWS-Builders-Korea-Program-Storage-20230322.pdf](https://github.com/kjhyuok/KR-AWS-DataSync-NFS-Server-Migration/raw/main/images/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8-AWS-Builders-Korea-Program-Storage-20230322.pdf))
 * [Contact Me](detail/Contactme.md)
 
 
