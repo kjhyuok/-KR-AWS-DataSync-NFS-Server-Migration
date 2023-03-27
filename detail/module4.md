@@ -1,13 +1,14 @@
-# Module 4 : Cut-Over 직전에 추가된 파일들에 대한 증분을 가져와 봅니다.
+# Module 4 : 컷오버 직전에 추가된 파일들에 대한 증분을 가져와 봅니다.
+
 (**Cut-Over**: 기존 시스템을 새로운 시스템으로 완전히 바꾸는 전략)\
 이 모듈에서는 DataSync를 사용하여 증분 데이터 전송을 수행합니다.\
 이렇게하면 초기 데이터 복사 후 생성된 새 파일을 가져올 수 있고, On-premises NFS 서버에서의 모든 파일이 복사 되었음이 확인되면 컷오버를 진행할 수 있습니다.
 
-![4-1](<../images/3-1 (11).png>)
+![4-1](<../images/3-1 (10) (9).png>)
 
 ### Module Steps
 
-👉🏻_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.
+👉🏻\_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.
 
 1. **Create a new file on the NFS server**\
    Application 서버용 CLI에서 다음 명령을 실행하여 NFS 서버에 새 파일을 생성합니다.

@@ -1,7 +1,7 @@
 # Table of contents
 
 * [이제 온프레미스에서도 AWS Storage Gateway, AWS datasync를 활용하여 AWS S3를 NFS 처럼 사용해 봅시다!](README.md)
-* [detail](detail/README.md)
+* [Workshop Category](detail/README.md)
   * [Preparations](detail/Preparations.md)
   * [Module 1 : On-premises 및 IN-CLOUD 리전에 실습용 AWS Resource 배포](detail/module1.md)
   * [Module 2 : On-premises NFS를 AWS S3로 대체하기 위해 DataSync를 사용하여 현 스토리지를 마이그레이션 해 봅니다.](detail/module2.md)

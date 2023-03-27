@@ -8,13 +8,13 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
 
 ### Module Steps
 
-👉🏻_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.
+👉🏻\_Storage 모든 실습을 us-east-1: US East(N. Virginia)에서 진행합니다.
 
 1.  먼저 **Data Sync Agent의 활성화**\
     Agent Instance는 Module1에서 생성되었는데 사용하려면 **IN-CLOUD** 리전에서 활성화해야 합니다. Agent를 활성화하려면 아래 단계를 따르세요.
 
     1. AWS Management 콘솔 페이지로 이동하고 **Services**를 클릭한 다음 **DataSync**를 선택합니다.
-    2. DataSync agent 생성을 위해 **Create agent** 버튼을 클릭합니다.(기존 생성된 agent가 있다면, **Get started**) 
+    2. DataSync agent 생성을 위해 **Create agent** 버튼을 클릭합니다.(기존 생성된 agent가 있다면, **Get started**)
     3. DataSync agent를 실행할 EC2 인스턴스는 이미 **on-premises**를 시뮬레이션 하는 환경에 배포되었습니다.
     4. Deploy agent를 EC2 인스턴스로 선택해 주세요.
 
@@ -30,7 +30,6 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
     ![2-3](../images/2-3.png)
 
     8. 원하는 경우 agent 이름을 입력한 다음 **Create agent**를 클릭합니다.
-
 2.  **Create NFS location**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations**를 클릭한 다음 **Create location**을 클릭합니다.
@@ -47,7 +46,6 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
     ```
 
     5. Click **Create location**.
-
 3.  **Create S3 location**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Locations** 클릭한 다음 **Create location**을 클릭합니다.
@@ -62,26 +60,24 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
     7. Click **Create location**: 페이지 왼쪽에서 **Locations**를 다시 클릭합니다. 이제 두 개의 locations가 나열되는데 하나는 NFS 서버용이고 다른 하나는 S3 버킷용입니다.
 
     ![2-6](../images/2-6.png)
-
 4.  **Create a task**
 
     1. DataSync 서비스 페이지의 왼쪽에서 **Tasks**를 클릭한 다음 **Create task**을 클릭합니다.
-    2. *Source location option*에서 **Choose an existing location**을 선택합니다.
-    3. *Existing locations* 드롭다운에서 이전에 생성한 NFS 서버 location를 선택합니다.
+    2. _Source location option_에서 **Choose an existing location**을 선택합니다.
+    3. _Existing locations_ 드롭다운에서 이전에 생성한 NFS 서버 location를 선택합니다.
     4. Click **Next**.
 
     ![2-7](../images/2-7.png)
 
-    5. *Destination location* 옵션에서 **Choose an existing location**을 선택합니다.
-    6. *Existing locations* 드롭다운에서 이전에 생성한 S3 버킷 위치를 선택합니다.
+    5. _Destination location_ 옵션에서 **Choose an existing location**을 선택합니다.
+    6. _Existing locations_ 드롭다운에서 이전에 생성한 S3 버킷 위치를 선택합니다.
     7. Click **Next**.
     8. Task Name에는 `StorageWorkshop`을 입력하시고 **Verify data** 드롭다운에서 **Verify only the data transferred**을 선택합니다.(다른 모든 옵션은 기본 유지)
-    9. 작업 logging에서 *Autogenerate*을 선택하여 CloudWatch log group 및 리소스 정책을 생성합니다.
+    9. 작업 logging에서 _Autogenerate_을 선택하여 CloudWatch log group 및 리소스 정책을 생성합니다.
 
     ![2-8](../images/2-8.png)
 
     10. 해당 작업 설정을 검토하고 **Create task**을 클릭합니다.
-
 5.  **Run the task**
 
     1. **Task status**가 "_Available_"으로 보고될 때까지 기다립니다. (페이지를 refresh해야 할 수도 있습니다.)
@@ -102,7 +98,7 @@ DataSync 작업은 데이터 복사 작업을 수행하며 **Source & Destinatio
 
 ### Validation Step
 
-AWS 콘솔에서 **S3**를 선택하고 버킷 목록에서 **data-migration-workshop** 버킷을 클릭합니다. 그 안에는 "*images*"라는 최상위 폴더가 표시되는데 이 폴더 안에는 NFS 서버의 .jpg 파일 200개가 있어야 합니다.
+AWS 콘솔에서 **S3**를 선택하고 버킷 목록에서 **data-migration-workshop** 버킷을 클릭합니다. 그 안에는 "_images_"라는 최상위 폴더가 표시되는데 이 폴더 안에는 NFS 서버의 .jpg 파일 200개가 있어야 합니다.
 
 ![2-13](../images/2-13.png)
 
